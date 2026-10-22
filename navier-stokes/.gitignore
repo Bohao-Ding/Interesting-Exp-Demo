@@ -1,0 +1,4 @@
+output/
+paper/*.pdf
+paper/extracted.txt
+paper/assets/
