@@ -1,0 +1,47 @@
+{
+  "analyticChecks": {
+    "viscous_shear_wave": {
+      "grid": [
+        128,
+        64
+      ],
+      "steps": 1000,
+      "nu": 0.1,
+      "relativeL2": 0.0004013823257413791,
+      "meanDensity": 1.0000016391277313
+    },
+    "scalar_advection_diffusion": {
+      "grid": [
+        128,
+        64
+      ],
+      "steps": 1000,
+      "nu": 0.1,
+      "relativeL2": 0.000717017650307222,
+      "meanDensity": 1.000000238418579
+    }
+  },
+  "field": {
+    "grid": [
+      2560,
+      1280
+    ],
+    "reynolds": 5000,
+    "time_U_over_H": 5.552604166667498,
+    "finite": true,
+    "density": [
+      0.987445592880249,
+      1.006209373474121
+    ],
+    "meanDensity": 1.0012117651991865,
+    "concentration": [
+      0.053231772035360336,
+      0.8927057981491089
+    ],
+    "meanConcentration": 0.5000069101569511,
+    "kineticEnergyOverU2": 0.38449773770547574,
+    "rmsTransverseOverU": 0.686761035105028,
+    "maxMach": 0.13358091371963116,
+    "maxAdvectiveCourant": 0.4076680988073349
+  }
+}

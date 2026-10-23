@@ -8,6 +8,7 @@
 |---|---|---|
 | `navier-stokes` | Navier–Stokes 爆破解演示动画：局部自相似涡核、旋转层与上下排出通道 | [README](navier-stokes/README.md) |
 | `karman-vortex` | 自编 GPU CFD 卡门涡街：圆柱绕流、流速/涡量/流向、缩放与自动网格加密 | [README](karman-vortex/README.md) |
+| `kelvin-helmholtz` | 自编 GPU CFD 剪切不稳定：双剪切层、示踪物卷吸、高密度网格与缩放平移 | [README](kelvin-helmholtz/README.md) |
 
 新增实验时在仓库根目录建立独立子目录，并更新此索引。
 

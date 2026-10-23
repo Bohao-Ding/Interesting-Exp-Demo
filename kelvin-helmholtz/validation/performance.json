@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-23",
+  "adapter": "NVIDIA Blackwell",
+  "grid": [2560, 1280],
+  "view_zoom": 3.375,
+  "max_fluid_steps_per_frame": 32,
+  "observed_running_fps": [55, 57],
+  "observed_running_fluid_MLUPS": [5766, 6025],
+  "scope": "Live UI observations including scalar updates and rendering, not an independent benchmark. Physical advancement slows when GPU-limited."
+}
