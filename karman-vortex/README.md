@@ -4,7 +4,9 @@
 
 ![圆柱绕流与交替脱涡](assets/preview.png)
 
-[查看约 8 秒的实际录制动画](assets/preview.webm) · [局部视图](assets/detail.png) · [已保存的核对结果](VALIDATION.md)
+![局部流场视图](assets/detail.png)
+
+[已保存的核对结果](VALIDATION.md)
 
 ## 启动与关闭
 
@@ -52,7 +54,7 @@ cargo run --release --manifest-path karman-vortex/Cargo.toml
 
 开发检查地址 [/?verify=1](http://127.0.0.1:8766/?verify=1) 会在页面底部显示一次全域场扫描以及尾流横向速度探针的脱涡周期；普通观看地址不执行这些 GPU 回读。网格切换后重新扫描并重新统计探针。Strouhal 数通过探针同方向过零周期计算，没有被求解器指定。
 
-已保存的场扫描、脱涡探针与网格切换观察见 [VALIDATION.md](VALIDATION.md)，对应的小型 JSON 摘要随仓库保存在 `validation/`。固定截图和视频预览保存在 `assets/`。自行生成的截图、视频和临时核对结果保存在本地 `output/`，构建缓存位于 `target/`；这两个目录均不加入版本控制。
+已保存的场扫描、脱涡探针与网格切换观察见 [VALIDATION.md](VALIDATION.md)，对应的小型 JSON 摘要随仓库保存在 `validation/`。固定预览图片保存在 `assets/`。自行生成的截图、视频和临时核对结果保存在本地 `output/`，构建缓存位于 `target/`；这两个目录均不加入版本控制。
 
 核对覆盖着色器/脚本加载、实际交替脱涡、场的有限性与密度范围，以及放大加密/缩小回落后的连续演化；不代表独立的网格收敛或工程验证。
 
