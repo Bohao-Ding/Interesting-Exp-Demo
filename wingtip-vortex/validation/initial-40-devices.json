@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-23T14:28:01.460Z",
+  "adapter": {
+    "vendor": "nvidia",
+    "architecture": "blackwell",
+    "description": ""
+  },
+  "configuration": "devices",
+  "current": {
+    "grid": [
+      240,
+      224,
+      96
+    ],
+    "cells": 5160960,
+    "steps": 22356,
+    "time_U_MAC": 76.06572258883249,
+    "incidence_deg": 8,
+    "Re_MAC": 20000,
+    "finite": true,
+    "rhoMin": 0.9935324788093567,
+    "rhoMax": 1.0095230340957642,
+    "meanRho": 0.9998669264301873,
+    "maxSpeed_U": 1.4989577164428725,
+    "wakePlane_rootChord": 2.3,
+    "regions": [
+      {
+        "side": -1,
+        "circulation_rootChord_U": -0.11851541415012438,
+        "peak_omegaX_rootChord_U": 11.237886335168565,
+        "core": [
+          -2.3625,
+          0.11250000000000004
+        ]
+      },
+      {
+        "side": 1,
+        "circulation_rootChord_U": -0.04988781144297559,
+        "peak_omegaX_rootChord_U": -10.489320116383688,
+        "core": [
+          2.437500000000001,
+          0.46250000000000013
+        ]
+      }
+    ]
+  },
+  "optimization": {
+    "description": "Precomputed wall-link bits replace 19 neighbor solid-mask loads per fluid cell.",
+    "grid": [
+      120,
+      112,
+      48
+    ],
+    "cells": 645120,
+    "steps": 104,
+    "timing": [
+      {
+        "baseline_ms": 6.100000008940697,
+        "optimized_ms": 6.899999991059303
+      },
+      {
+        "baseline_ms": 5.299999997019768,
+        "optimized_ms": 5.200000002980232
+      },
+      {
+        "baseline_ms": 6.299999997019768,
+        "optimized_ms": 6.9000000059604645
+      }
+    ],
+    "max_abs_field_difference": 0,
+    "rms_field_difference": 0
+  },
+  "empty_domain": {
+    "steps": 104,
+    "max_spanwise_velocity_U": 0.000006944996552452461,
+    "max_density_error": 0.000003337860107421875
+  }
+}

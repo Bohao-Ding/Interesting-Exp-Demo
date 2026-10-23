@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>翼尖涡 · 三维 CFD 风洞</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#070c13;color:#e2eaf4;font:14px/1.6 system-ui,"Microsoft YaHei",sans-serif;overflow:hidden}canvas{width:100vw;height:100vh;display:block;touch-action:none}header{position:absolute;top:26px;left:30px;pointer-events:none}small,.muted{color:#8295a9;font-size:11px;letter-spacing:.12em}h1{font-size:30px;font-weight:550;letter-spacing:.06em;margin:4px 0 3px}.sub{color:#9bafc4;font-size:12px}.panel{position:absolute;right:24px;top:24px;width:262px;max-height:calc(100vh - 48px);overflow:auto;padding:18px 19px;border:1px solid #243343;border-radius:12px;background:#101a25ed;backdrop-filter:blur(15px)}.row{margin:12px 0}.row label{display:flex;justify-content:space-between;font-size:12px;color:#aec0d1}select,button{font:inherit;color:#dce6f1;background:#1b2a3a;border:1px solid #35475b;border-radius:6px;padding:7px 9px}select{width:100%;margin-top:5px;font-size:12px}button{cursor:pointer;font-size:12px}button:hover{border-color:#7199bc;background:#263e52}.buttons{display:flex;gap:7px;margin-top:14px}.buttons button{flex:1}input[type=range]{width:100%;accent-color:#6bc4d8}input[type=checkbox]{accent-color:#6bc4d8}.check{display:flex;align-items:center;gap:7px;color:#aec0d1;font-size:12px;margin:9px 0}.stats{position:absolute;bottom:26px;left:30px;display:flex;gap:28px;pointer-events:none}.value{font:22px ui-monospace,monospace;font-weight:450}.unit{font:10px system-ui;color:#8295a9;letter-spacing:.12em}.legend{position:absolute;bottom:29px;right:29px;width:230px;font-size:10px;color:#9eb3c6}.bar{height:4px;background:linear-gradient(90deg,#13a3f5,#295775,#c77e45,#ff6714);margin:6px 0}.help{position:absolute;top:140px;left:30px;color:#738aa0;font-size:11px}.notice{position:absolute;bottom:100px;left:30px;max-width:650px;color:#b5cbdf;font-size:12px}details{margin-top:12px;color:#8fa8bf;font-size:11px}pre{font-size:10px;max-height:250px;overflow:auto;white-space:pre-wrap}#status{color:#6ed0ba;letter-spacing:0;font-size:11px}#error{position:absolute;bottom:130px;left:30px;max-width:75vw;white-space:pre-wrap;background:#341e29;color:#ffc5c5;border-radius:8px;padding:14px;display:none}@media(max-width:850px){.panel{width:224px;right:12px;top:12px}header{left:18px;top:18px}h1{font-size:22px}.help{display:none}.stats{left:18px;gap:16px}.notice{max-width:45vw}}
+</style>
+<canvas id="scene"></canvas>
+<header><small>AERODYNAMICS LAB / GPU CFD</small><h1>翼尖涡 · 三维风洞</h1><div class="sub">NASA CRM-HL 参考翼面 · 从均匀来流自然演化</div></header>
+<div class="help">左键旋转 · 右键 / Shift 拖动平移 · 滚轮缩放 · 双击复位<br>金色：研究型扰流板　青色：研究型翼刀</div>
+<aside class="panel"><div id="status">载入几何与 GPU 求解器…</div>
+<div class="row"><label>实体构型</label><select id="configuration"><option value="devices">参考机翼 + 翼刀 / 扰流板</option><option value="clean">参考机翼（干净构型）</option></select></div>
+<div class="row"><label>网格密度</label><select id="resolution"><option value="20">初版预览 · 120 × 112 × 48</option><option value="40" selected>标准 · 240 × 224 × 96</option><option value="60">精细 · 360 × 336 × 144</option></select></div>
+<div class="row"><label>分布函数存储</label><select id="precision"><option value="fp32">FP32（默认，保留精度）</option><option value="fp16">FP16 实验（存在明显精度损失）</option></select></div>
+<div class="row"><label>迎角 <span id="alphaValue">8°</span></label><input id="alpha" type="range" min="0" max="14" value="8" step="2"></div>
+<div class="row"><label>涡结构显示</label><select id="mode"><option value="0">Q &gt; 0 · 旋转主导区域</option><option value="1">涡量强度 · 剪切层与尾迹</option></select></div>
+<div class="row"><label>显示阈值 <span id="thresholdValue">1.2</span></label><input id="threshold" type="range" min="0.1" max="8" step="0.1" value="1.2"></div>
+<label class="check"><input type="checkbox" id="cp">机翼表面压力系数 Cp</label>
+<label class="check"><input type="checkbox" id="lines" checked>从 CFD 速度积分的瞬时流线</label>
+<label class="check"><input type="checkbox" id="focus" checked>聚焦翼尖尾迹（仅调整显示）</label>
+<div class="buttons"><button id="pause">暂停</button><button id="reset">重新计算</button><button id="home">全景</button></div>
+<div class="buttons"><button id="top">俯视</button><button id="wake">尾迹视角</button></div>
+<div class="buttons"><button id="capture">保存图片</button><button id="verify">核对与测速</button></div>
+<div class="buttons"><button id="performance">FP32 性能比较</button></div>
+<details><summary>计算范围与结果</summary><p>自编 D3Q19 正则化 LBM，Smagorinsky Cs=0.14。Re<sub>MAC</sub>=2,000，Ma∞=0.121。采用公开翼面；翼刀和升起 25° 的扰流板为研究扩展。首版网格用于观察大尺度涡形成，尚不代表实机飞行工况精度。</p><pre id="report">尚未运行核对。</pre></details>
+</aside>
+<div class="notice" id="notice">正在计算翼面绕流，尾迹会随对流时间逐渐发展。</div>
+<div class="stats"><div><div class="value" id="time">0.00</div><div class="unit">t U∞ / MAC</div></div><div><div class="value" id="cells">—</div><div class="unit">百万网格</div></div><div><div class="value" id="speed">—</div><div class="unit">MLUPS · 仿真及显示</div></div><div><div class="value" id="fps">—</div><div class="unit">FPS · 显示</div></div></div>
+<div class="legend">颜色：流向涡量 ω<sub>x</sub> 的符号<div class="bar"></div><span>负旋转</span><span style="float:right">正旋转</span><div style="margin-top:8px">流线颜色：蓝色低速 → 浅金色高速</div></div>
+<pre id="error"></pre><script type="module" src="app.js"></script></html>

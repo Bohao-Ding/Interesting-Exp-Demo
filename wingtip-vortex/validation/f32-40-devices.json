@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-23T14:31:41.373Z",
+  "adapter": {
+    "vendor": "nvidia",
+    "architecture": "blackwell",
+    "description": ""
+  },
+  "configuration": "devices",
+  "current": {
+    "grid": [
+      240,
+      224,
+      96
+    ],
+    "cells": 5160960,
+    "steps": 47772,
+    "time_U_MAC": 162.54301751269037,
+    "incidence_deg": 8,
+    "Re_MAC": 2000,
+    "finite": true,
+    "rhoMin": 0.9932769536972046,
+    "rhoMax": 1.009992003440857,
+    "meanRho": 0.9999518027416863,
+    "maxSpeed_U": 1.2688058679966339,
+    "wakePlane_rootChord": 2.3,
+    "regions": [
+      {
+        "side": -1,
+        "circulation_rootChord_U": 0.04793814255468273,
+        "peak_omegaX_rootChord_U": 3.8790205227477204,
+        "core": [
+          -1.8375,
+          0.23750000000000004
+        ]
+      },
+      {
+        "side": 1,
+        "circulation_rootChord_U": 0.010159040648431919,
+        "peak_omegaX_rootChord_U": -6.097899467152144,
+        "core": [
+          1.9875000000000007,
+          0.23750000000000004
+        ]
+      }
+    ]
+  },
+  "optimization": {
+    "description": "Precomputed wall-link bits and conditional population loads avoid unused bounce-back reads.",
+    "grid": [
+      240,
+      224,
+      96
+    ],
+    "cells": 5160960,
+    "steps": 304,
+    "timing": [
+      {
+        "baseline_ms": 123.90000000596046,
+        "optimized_ms": 125
+      },
+      {
+        "baseline_ms": 119,
+        "optimized_ms": 122.40000000596046
+      },
+      {
+        "baseline_ms": 123.5,
+        "optimized_ms": 123.40000000596046
+      }
+    ],
+    "max_abs_field_difference": 0,
+    "rms_field_difference": 0
+  },
+  "empty_domain": {
+    "steps": 104,
+    "max_spanwise_velocity_U": 0.000008514939509041142,
+    "max_density_error": 0.000003814697265625
+  }
+}

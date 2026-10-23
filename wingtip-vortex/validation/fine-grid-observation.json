@@ -1,0 +1,20 @@
+{
+  "source": "browser UI observation; not a full-field scan",
+  "date": "2026-10-23",
+  "GPU": "NVIDIA GeForce RTX 5070 Ti 16GB",
+  "grid": [
+    360,
+    336,
+    144
+  ],
+  "cells": 17418240,
+  "format": "FP32",
+  "Re_MAC": 2000,
+  "incidence_deg": 8,
+  "observed_time_U_MAC": 13.9,
+  "observed_running_fps": 22,
+  "observed_running_MLUPS_including_display": 3120,
+  "final_paused_time_U_MAC": 33.52,
+  "full_field_finite_scan_on_this_grid": false,
+  "preview": "assets/preview.png"
+}

@@ -1,0 +1,264 @@
+{
+  "date": "2026-10-23T14:38:29.838Z",
+  "adapter": {
+    "vendor": "nvidia",
+    "architecture": "blackwell",
+    "description": ""
+  },
+  "configuration": "devices",
+  "current": {
+    "grid": [
+      240,
+      224,
+      96
+    ],
+    "cells": 5160960,
+    "format": "fp32",
+    "steps": 20304,
+    "time_U_MAC": 69.08384467005077,
+    "incidence_deg": 8,
+    "Re_MAC": 2000,
+    "finite": true,
+    "rhoMin": 0.9933119416236877,
+    "rhoMax": 1.009953260421753,
+    "meanRho": 0.9999498865336511,
+    "maxSpeed_U": 1.29839615239079,
+    "maxMach": 0.15742216730049538,
+    "wakePlane_rootChord": 2.3,
+    "regions": [
+      {
+        "side": -1,
+        "circulation_rootChord_U": -0.06674795659331971,
+        "peak_omegaX_rootChord_U": 6.308952978413019,
+        "core": [
+          -1.7374999999999998,
+          0.21250000000000013
+        ]
+      },
+      {
+        "side": 1,
+        "circulation_rootChord_U": 0.09716594992174322,
+        "peak_omegaX_rootChord_U": 5.805375786232096,
+        "core": [
+          1.8875000000000002,
+          0.21250000000000013
+        ]
+      }
+    ],
+    "pressure": [
+      {
+        "span_rootChord": -1.20375,
+        "upperCp": -0.2864104549901014,
+        "lowerCp": -0.03148909328746146
+      },
+      {
+        "span_rootChord": -0.6018749999999999,
+        "upperCp": -0.37848543958599057,
+        "lowerCp": -0.07927823228900933
+      },
+      {
+        "span_rootChord": 0.6018750000000002,
+        "upperCp": -0.39113622133423676,
+        "lowerCp": -0.06910084056205489
+      },
+      {
+        "span_rootChord": 1.2037499999999999,
+        "upperCp": -0.2705564304273955,
+        "lowerCp": -0.09923565144441564
+      }
+    ]
+  },
+  "forces": {
+    "force_lattice": [
+      1.4784257300198078,
+      -0.019078530371189117,
+      2.506263919174671
+    ],
+    "CL": 0.2807359317066206,
+    "CD": 0.22359579547799296
+  },
+  "optimization": {
+    "description": "3D 32x2x2 workgroup tiles remove integer coordinate divisions; precomputed wall links and conditional loads. Both FP32.",
+    "grid": [
+      240,
+      224,
+      96
+    ],
+    "cells": 5160960,
+    "steps": 1024,
+    "timing": [
+      {
+        "baseline_ms": 131,
+        "optimized_ms": 132.90000000596046
+      },
+      {
+        "baseline_ms": 132.29999999701977,
+        "optimized_ms": 133.09999999403954
+      },
+      {
+        "baseline_ms": 130.1000000089407,
+        "optimized_ms": 131.29999999701977
+      }
+    ],
+    "max_abs_field_difference": 0,
+    "rms_field_difference": 0,
+    "rms_velocity_difference_U": 0,
+    "reference": {
+      "grid": [
+        240,
+        224,
+        96
+      ],
+      "cells": 5160960,
+      "format": "fp32",
+      "steps": 1024,
+      "time_U_MAC": 3.4841340101522844,
+      "incidence_deg": 8,
+      "Re_MAC": 2000,
+      "finite": true,
+      "rhoMin": 0.9904757738113403,
+      "rhoMax": 1.0096436738967896,
+      "meanRho": 0.999979441150566,
+      "maxSpeed_U": 1.3752039488722463,
+      "maxMach": 0.16673461771512585,
+      "wakePlane_rootChord": 2.3,
+      "regions": [
+        {
+          "side": -1,
+          "circulation_rootChord_U": -0.03361154631720191,
+          "peak_omegaX_rootChord_U": 6.5825795505328895,
+          "core": [
+            -1.9874999999999998,
+            0.2625000000000002
+          ]
+        },
+        {
+          "side": 1,
+          "circulation_rootChord_U": 0.033609462301060246,
+          "peak_omegaX_rootChord_U": -6.582775136588938,
+          "core": [
+            1.9875000000000007,
+            0.2625000000000002
+          ]
+        }
+      ],
+      "pressure": [
+        {
+          "span_rootChord": -1.20375,
+          "upperCp": -0.31150928159960267,
+          "lowerCp": 0.08039733990520034
+        },
+        {
+          "span_rootChord": -0.6018749999999999,
+          "upperCp": -0.5931513650076728,
+          "lowerCp": 0.1730562067356239
+        },
+        {
+          "span_rootChord": 0.6018750000000002,
+          "upperCp": -0.5931270365812339,
+          "lowerCp": 0.17302376883370532
+        },
+        {
+          "span_rootChord": 1.2037499999999999,
+          "upperCp": -0.31152550055056194,
+          "lowerCp": 0.08044599675807822
+        }
+      ]
+    },
+    "optimized": {
+      "grid": [
+        240,
+        224,
+        96
+      ],
+      "cells": 5160960,
+      "format": "fp32",
+      "steps": 1024,
+      "time_U_MAC": 3.4841340101522844,
+      "incidence_deg": 8,
+      "Re_MAC": 2000,
+      "finite": true,
+      "rhoMin": 0.9904757738113403,
+      "rhoMax": 1.0096436738967896,
+      "meanRho": 0.999979441150566,
+      "maxSpeed_U": 1.3752039488722463,
+      "maxMach": 0.16673461771512585,
+      "wakePlane_rootChord": 2.3,
+      "regions": [
+        {
+          "side": -1,
+          "circulation_rootChord_U": -0.03361154631720191,
+          "peak_omegaX_rootChord_U": 6.5825795505328895,
+          "core": [
+            -1.9874999999999998,
+            0.2625000000000002
+          ]
+        },
+        {
+          "side": 1,
+          "circulation_rootChord_U": 0.033609462301060246,
+          "peak_omegaX_rootChord_U": -6.582775136588938,
+          "core": [
+            1.9875000000000007,
+            0.2625000000000002
+          ]
+        }
+      ],
+      "pressure": [
+        {
+          "span_rootChord": -1.20375,
+          "upperCp": -0.31150928159960267,
+          "lowerCp": 0.08039733990520034
+        },
+        {
+          "span_rootChord": -0.6018749999999999,
+          "upperCp": -0.5931513650076728,
+          "lowerCp": 0.1730562067356239
+        },
+        {
+          "span_rootChord": 0.6018750000000002,
+          "upperCp": -0.5931270365812339,
+          "lowerCp": 0.17302376883370532
+        },
+        {
+          "span_rootChord": 1.2037499999999999,
+          "upperCp": -0.31152550055056194,
+          "lowerCp": 0.08044599675807822
+        }
+      ]
+    },
+    "referenceForce": {
+      "force_lattice": [
+        2.0515060499310493,
+        -0.000009436160326004028,
+        4.293115235865116
+      ],
+      "CL": 0.48914391340515573,
+      "CD": 0.32426394726137847
+    },
+    "optimizedForce": {
+      "force_lattice": [
+        2.0515060499310493,
+        -0.000009436160326004028,
+        4.293115235865116
+      ],
+      "CL": 0.48914391340515573,
+      "CD": 0.32426394726137847
+    }
+  },
+  "empty_domain": {
+    "steps": 104,
+    "max_spanwise_velocity_U": 0.000008514939509041142,
+    "max_density_error": 0.000003814697265625
+  },
+  "shear_wave": {
+    "grid": [
+      32,
+      24,
+      24
+    ],
+    "steps": 256,
+    "viscosity_lattice": 0.05,
+    "relative_L2": 0.0076125890856749
+  }
+}

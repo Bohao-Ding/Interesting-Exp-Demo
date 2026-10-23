@@ -1,0 +1,282 @@
+{
+  "date": "2026-10-23T15:00:46.401Z",
+  "adapter": {
+    "vendor": "nvidia",
+    "architecture": "blackwell",
+    "description": ""
+  },
+  "implementation": "Rust-generated D3Q19 moment basis; 10 FP32 coefficients versus 19 FP32 populations",
+  "grid": [
+    360,
+    336,
+    144
+  ],
+  "cells": 17418240,
+  "configuration": "devices",
+  "viewport": [
+    1143,
+    1125
+  ],
+  "display": {
+    "mode": 0,
+    "threshold": 1.2,
+    "lines": true,
+    "focus": true
+  },
+  "timestamp_query": true,
+  "core_steps_per_trial": 96,
+  "display_steps_per_trial": 24,
+  "core": [
+    {
+      "reference": {
+        "wall_ms": 400.5,
+        "gpu_ms": {
+          "step": 397.017088
+        }
+      },
+      "specialized": {
+        "wall_ms": 451.40000000596046,
+        "gpu_ms": {
+          "step": 449.445888
+        }
+      }
+    },
+    {
+      "reference": {
+        "wall_ms": 396.29999999701977,
+        "gpu_ms": {
+          "step": 394.8544
+        }
+      },
+      "specialized": {
+        "wall_ms": 462.40000000596046,
+        "gpu_ms": {
+          "step": 460.71808
+        }
+      }
+    },
+    {
+      "reference": {
+        "wall_ms": 393.6000000089407,
+        "gpu_ms": {
+          "step": 391.446528
+        }
+      },
+      "specialized": {
+        "wall_ms": 456.90000000596046,
+        "gpu_ms": {
+          "step": 454.557696
+        }
+      }
+    }
+  ],
+  "rendered": [
+    {
+      "reference": {
+        "wall_ms": 104.70000000298023,
+        "gpu_ms": {
+          "step": 99.221504,
+          "extract": 2.62144,
+          "curl": 0.65536,
+          "render": 0.851968
+        }
+      },
+      "specialized": {
+        "wall_ms": 116.40000000596046,
+        "gpu_ms": {
+          "step": 111.4112,
+          "extract": 1.507328,
+          "curl": 0.786432,
+          "render": 0.589824
+        }
+      }
+    },
+    {
+      "reference": {
+        "wall_ms": 104.20000000298023,
+        "gpu_ms": {
+          "step": 98.95936,
+          "extract": 2.62144,
+          "curl": 0.65536,
+          "render": 0.589824
+        }
+      },
+      "specialized": {
+        "wall_ms": 118.20000000298023,
+        "gpu_ms": {
+          "step": 113.0496,
+          "extract": 1.6384,
+          "curl": 0.65536,
+          "render": 0.98304
+        }
+      }
+    },
+    {
+      "reference": {
+        "wall_ms": 105.5,
+        "gpu_ms": {
+          "step": 98.95936,
+          "extract": 2.62144,
+          "curl": 0.917504,
+          "render": 0.589824
+        }
+      },
+      "specialized": {
+        "wall_ms": 114.90000000596046,
+        "gpu_ms": {
+          "step": 109.576192,
+          "extract": 1.507328,
+          "curl": 1.048576,
+          "render": 0.589824
+        }
+      }
+    }
+  ],
+  "comparison": {
+    "steps": 1024,
+    "max_abs_field_difference": 0.000005023786798119545,
+    "rms_velocity_difference_U": 0.000005594260986523716,
+    "reference": {
+      "grid": [
+        360,
+        336,
+        144
+      ],
+      "cells": 17418240,
+      "format": "fp32",
+      "steps": 1024,
+      "time_U_MAC": 2.3227560067681896,
+      "incidence_deg": 8,
+      "Re_MAC": 2000,
+      "finite": true,
+      "rhoMin": 0.989105224609375,
+      "rhoMax": 1.0078965425491333,
+      "meanRho": 0.9999901895563488,
+      "maxSpeed_U": 1.42413825285692,
+      "maxMach": 0.1726675867665391,
+      "wakePlane_rootChord": 2.3,
+      "regions": [
+        {
+          "side": -1,
+          "circulation_rootChord_U": -0.05044063764086915,
+          "peak_omegaX_rootChord_U": -5.985019030049442,
+          "core": [
+            -2.125,
+            0.29166666666666674
+          ]
+        },
+        {
+          "side": 1,
+          "circulation_rootChord_U": 0.05044012664386946,
+          "peak_omegaX_rootChord_U": 5.98504497403545,
+          "core": [
+            2.125,
+            0.29166666666666674
+          ]
+        }
+      ],
+      "pressure": [
+        {
+          "span_rootChord": -1.20375,
+          "upperCp": -0.552214732786425,
+          "lowerCp": -0.03268118618296927
+        },
+        {
+          "span_rootChord": -0.6018749999999999,
+          "upperCp": -0.7496399133383821,
+          "lowerCp": 0.0870957666513871
+        },
+        {
+          "span_rootChord": 0.6018750000000002,
+          "upperCp": -0.7496561322893414,
+          "lowerCp": 0.08716064245522426
+        },
+        {
+          "span_rootChord": 1.2037499999999999,
+          "upperCp": -0.5521660759335472,
+          "lowerCp": -0.03267307670748963
+        }
+      ]
+    },
+    "specialized": {
+      "grid": [
+        360,
+        336,
+        144
+      ],
+      "cells": 17418240,
+      "format": "fp32-moments",
+      "steps": 1024,
+      "time_U_MAC": 2.3227560067681896,
+      "incidence_deg": 8,
+      "Re_MAC": 2000,
+      "finite": true,
+      "rhoMin": 0.9891048669815063,
+      "rhoMax": 1.007895827293396,
+      "meanRho": 0.9999899945766824,
+      "maxSpeed_U": 1.4241428659267437,
+      "maxMach": 0.17266814607153103,
+      "wakePlane_rootChord": 2.3,
+      "regions": [
+        {
+          "side": -1,
+          "circulation_rootChord_U": -0.05044134952619228,
+          "peak_omegaX_rootChord_U": -5.985046371019312,
+          "core": [
+            -2.125,
+            0.29166666666666674
+          ]
+        },
+        {
+          "side": 1,
+          "circulation_rootChord_U": 0.050442260962881846,
+          "peak_omegaX_rootChord_U": 5.985014240390488,
+          "core": [
+            2.125,
+            0.29166666666666674
+          ]
+        }
+      ],
+      "pressure": [
+        {
+          "span_rootChord": -1.20375,
+          "upperCp": -0.5522309517373843,
+          "lowerCp": -0.032729843035847146
+        },
+        {
+          "span_rootChord": -0.6018749999999999,
+          "upperCp": -0.7497128986176989,
+          "lowerCp": 0.08706332874946852
+        },
+        {
+          "span_rootChord": 0.6018750000000002,
+          "upperCp": -0.7497210080931785,
+          "lowerCp": 0.08711198560234638
+        },
+        {
+          "span_rootChord": 1.2037499999999999,
+          "upperCp": -0.5522228422619047,
+          "lowerCp": -0.03269740513392856
+        }
+      ]
+    },
+    "referenceForce": {
+      "force_lattice": [
+        2.4361700862646103,
+        0.00001605972647666931,
+        10.400925729423761
+      ],
+      "CL": 0.5460205595830643,
+      "CD": 0.2115959371673602
+    },
+    "specializedForce": {
+      "force_lattice": [
+        2.4362159073352814,
+        0.000014036893844604492,
+        10.400977812707424
+      ],
+      "CL": 0.5460230373091656,
+      "CD": 0.21159882188132087
+    }
+  }
+}

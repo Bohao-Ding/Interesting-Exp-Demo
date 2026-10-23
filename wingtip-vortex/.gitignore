@@ -1,0 +1,6 @@
+/target/
+/output/
+/data/*.zip
+/data/*.stp
+/data/*.xlsx
+__pycache__/
