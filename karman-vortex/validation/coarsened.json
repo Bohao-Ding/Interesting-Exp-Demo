@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-23",
+  "operation": "While paused, return from 5.1x view to full domain and remesh 3072x1024 to 1536x512",
+  "grid": [1536, 512],
+  "reynolds": 150,
+  "time_before_UI_rounded": 281.3,
+  "time_after_exact_U_over_D": 281.259999999961,
+  "all_scanned_fluid_values_finite": true,
+  "density_range": [0.9875624179840088, 1.0094588994979858],
+  "max_speed_over_inflow": 1.483024463297764,
+  "max_mach": 0.17980716035095054,
+  "positive_vorticity_wake_cells": 31341,
+  "negative_vorticity_wake_cells": 30558,
+  "observation": "Physical time retained; wake and both vorticity signs retained."
+}

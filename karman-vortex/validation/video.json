@@ -1,0 +1,13 @@
+{
+  "opened": true,
+  "frames": 479,
+  "fps": 60.0,
+  "duration_seconds": 7.983333333333333,
+  "first_frame_decodes": true,
+  "last_frame_decodes": true,
+  "size": [
+    1081,
+    359
+  ],
+  "mean_absolute_frame_change": 11.44210070629949
+}

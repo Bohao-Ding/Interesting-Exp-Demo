@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-23",
+  "operation": "3.375x view zoom; remesh running wake from 1536x512 to 3072x1024",
+  "grid": [3072, 1024],
+  "reynolds": 150,
+  "diameter_cells": 128,
+  "scan_time_U_over_D": 257.4949999999826,
+  "all_scanned_fluid_values_finite": true,
+  "density_range": [0.9881869554519653, 1.0095012187957764],
+  "max_speed_over_inflow": 1.5036710772092339,
+  "max_mach": 0.1823104292518752,
+  "positive_vorticity_wake_cells": 138364,
+  "negative_vorticity_wake_cells": 116186,
+  "probe_time_U_over_D": 281.1724999999826,
+  "complete_probe_cycles": 3,
+  "measured_strouhal": 0.20102905516137834,
+  "periods_U_over_D": [4.981730070540834, 4.970830050059476, 4.970655817472505],
+  "observed_render_fps": 76,
+  "observed_solver_MLUPS": 7631,
+  "performance_scope": "One live UI observation on NVIDIA Blackwell; includes rendering and optional diagnostic readbacks; not a standalone benchmark.",
+  "scope": "Continuation of an interpolated wake, not an independent grid-convergence study."
+}

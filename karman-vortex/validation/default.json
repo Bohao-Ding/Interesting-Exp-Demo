@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-23",
+  "method": "GPU field readback and downstream transverse-velocity zero-crossings",
+  "grid": [1536, 512],
+  "reynolds": 150,
+  "diameter_cells": 64,
+  "scan_time_U_over_D": 64.12000000000022,
+  "all_scanned_fluid_values_finite": true,
+  "density_range": [0.9888723492622375, 1.0093069076538086],
+  "max_speed_over_inflow": 1.4862586112871328,
+  "max_mach": 0.18019927995552534,
+  "positive_vorticity_wake_cells": 35403,
+  "negative_vorticity_wake_cells": 29077,
+  "probe_time_U_over_D": 490.59500000000025,
+  "complete_probe_cycles": 85,
+  "measured_strouhal": 0.20135564495879726,
+  "scope": "Finite-domain 2-D demonstration; frequency observed, not imposed. No domain or grid convergence study."
+}
