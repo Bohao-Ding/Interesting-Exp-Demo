@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-25T05:41:49.370Z",
+  "method": "self-written TM Yee FDTD, FP32",
+  "adapter": {
+    "vendor": "nvidia",
+    "architecture": "blackwell"
+  },
+  "periodic_wave": {
+    "grid": [
+      128,
+      96
+    ],
+    "steps": 256,
+    "Courant": 0.65,
+    "discrete_relative_L2": 0.000001022854592243372,
+    "continuum_relative_L2": 0.012797443909826215
+  },
+  "absorption": {
+    "grid": [
+      128,
+      96
+    ],
+    "time_ct_a": 100.10000000000001,
+    "initial_energy": 16.084953764535847,
+    "remaining_energy": 0.000033281540648831804,
+    "remaining_fraction": 0.0000020691101221696415
+  },
+  "crystal_comparison": {
+    "frequency_fa_c": 0.36,
+    "epsilon_rod": 12,
+    "radius_a": 0.2,
+    "averaging_cycles": 3,
+    "probe_box_a": [
+      9.5,
+      10.5,
+      -0.65,
+      0.65
+    ],
+    "cases": [
+      {
+        "preset": "bulk",
+        "grid": [
+          512,
+          384
+        ],
+        "steps": 4431,
+        "time_ct_a": 180.009375,
+        "finite": true,
+        "peak_split_E": 0.2756172716617584,
+        "output_mean_Ez2": 1.1834466459234582e-8
+      },
+      {
+        "preset": "straight",
+        "grid": [
+          512,
+          384
+        ],
+        "steps": 4431,
+        "time_ct_a": 180.009375,
+        "finite": true,
+        "peak_split_E": 0.2768418788909912,
+        "output_mean_Ez2": 0.010269832174526528
+      }
+    ],
+    "defect_to_bulk_intensity_ratio": 867790.0444352394,
+    "note": "Local electric intensity ratio, not power-normalized transmission or a calculated band diagram."
+  }
+}

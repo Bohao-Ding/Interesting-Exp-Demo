@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-25T05:33:40.609Z",
+  "adapter": {
+    "vendor": "nvidia",
+    "architecture": "blackwell"
+  },
+  "grid": [
+    3072,
+    2304
+  ],
+  "cells": 7077888,
+  "frequency": 0.36,
+  "preset": 2,
+  "viewport": [
+    1600,
+    900
+  ],
+  "timestamp_query": true,
+  "core_steps": 128,
+  "frame_steps": 24,
+  "core": [
+    {
+      "wall_ms": 75.10000000149012,
+      "gpu_ms": {
+        "compute": 70.385664
+      }
+    },
+    {
+      "wall_ms": 72.20000000298023,
+      "gpu_ms": {
+        "compute": 70.909952
+      }
+    },
+    {
+      "wall_ms": 77,
+      "gpu_ms": {
+        "compute": 74.252288
+      }
+    }
+  ],
+  "frames": [
+    {
+      "wall_ms": 15.399999998509884,
+      "gpu_ms": {
+        "compute": 13.041664,
+        "render": 0.065536
+      }
+    },
+    {
+      "wall_ms": 16.5,
+      "gpu_ms": {
+        "compute": 13.041664,
+        "render": 0.065536
+      }
+    },
+    {
+      "wall_ms": 16.399999998509884,
+      "gpu_ms": {
+        "compute": 13.303808,
+        "render": 0.065536
+      }
+    }
+  ]
+}

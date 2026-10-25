@@ -1,0 +1,142 @@
+{
+  "date": "2026-10-25T05:35:48.979Z",
+  "adapter": {
+    "vendor": "nvidia",
+    "architecture": "blackwell"
+  },
+  "implementation": "FP32 cached axis coefficients and source factors",
+  "grid": [
+    3072,
+    2304
+  ],
+  "cells": 7077888,
+  "frequency": 0.36,
+  "preset": 2,
+  "viewport": [
+    1600,
+    900
+  ],
+  "timestamp_query": true,
+  "core_steps": 128,
+  "frame_steps": 24,
+  "core": [
+    {
+      "reference": {
+        "wall_ms": 72.30000000447035,
+        "gpu_ms": {
+          "compute": 70.254592
+        }
+      },
+      "optimized": {
+        "wall_ms": 72.60000000149012,
+        "gpu_ms": {
+          "compute": 70.713344
+        }
+      }
+    },
+    {
+      "reference": {
+        "wall_ms": 72.10000000149012,
+        "gpu_ms": {
+          "compute": 69.861376
+        }
+      },
+      "optimized": {
+        "wall_ms": 73.39999999850988,
+        "gpu_ms": {
+          "compute": 71.696384
+        }
+      }
+    },
+    {
+      "reference": {
+        "wall_ms": 72,
+        "gpu_ms": {
+          "compute": 70.189056
+        }
+      },
+      "optimized": {
+        "wall_ms": 72.20000000298023,
+        "gpu_ms": {
+          "compute": 70.582272
+        }
+      }
+    }
+  ],
+  "frames": [
+    {
+      "reference": {
+        "wall_ms": 16.5,
+        "gpu_ms": {
+          "compute": 13.041664,
+          "render": 0
+        }
+      },
+      "optimized": {
+        "wall_ms": 15.699999995529652,
+        "gpu_ms": {
+          "compute": 13.697024,
+          "render": 0
+        }
+      }
+    },
+    {
+      "reference": {
+        "wall_ms": 16.5,
+        "gpu_ms": {
+          "compute": 13.631488,
+          "render": 0.065536
+        }
+      },
+      "optimized": {
+        "wall_ms": 15.699999995529652,
+        "gpu_ms": {
+          "compute": 13.828096,
+          "render": 0.065536
+        }
+      }
+    },
+    {
+      "reference": {
+        "wall_ms": 14.899999998509884,
+        "gpu_ms": {
+          "compute": 13.238272,
+          "render": 0.065536
+        }
+      },
+      "optimized": {
+        "wall_ms": 14.899999998509884,
+        "gpu_ms": {
+          "compute": 13.828096,
+          "render": 0.065536
+        }
+      }
+    }
+  ],
+  "comparison": {
+    "grid": [
+      3072,
+      2304
+    ],
+    "steps": 1024,
+    "time_ct_a": 6.933333333333334,
+    "finite": true,
+    "max_absolute_Ez_difference": 1.4435499906539917e-7,
+    "relative_L2_Ez": 9.90577404653693e-7,
+    "relative_L2_H": 0.0000010439197893304155,
+    "relative_L2_intensity": 2.152964272230901e-7
+  },
+  "developed": {
+    "grid": [
+      1024,
+      768
+    ],
+    "steps": 8862,
+    "time_ct_a": 180.009375,
+    "finite": true,
+    "max_absolute_Ez_difference": 7.934868335723877e-7,
+    "relative_L2_Ez": 0.000003251356795951356,
+    "relative_L2_H": 0.000004289526151239059,
+    "relative_L2_intensity": 3.048968900911291e-7
+  }
+}

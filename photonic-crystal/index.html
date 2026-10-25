@@ -1,0 +1,25 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>光子晶体 · 电磁波实验台</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#05070c;color:#dce8f3;font:13px/1.6 system-ui,"Microsoft YaHei",sans-serif;overflow:hidden}canvas{display:block;width:100vw;height:100vh;touch-action:none}header{position:absolute;left:30px;top:26px;pointer-events:none}small{font-size:10px;letter-spacing:.2em;color:#7895a8}h1{font-weight:500;font-size:29px;letter-spacing:.08em;margin:6px 0}.sub{color:#8fa7b9;font-size:12px}.help{margin-top:20px;color:#668496;font-size:11px}aside{position:absolute;right:22px;top:24px;width:266px;max-height:calc(100vh - 48px);overflow:auto;background:#101923eb;border:1px solid #263744;border-radius:12px;padding:18px}#status{font-size:11px;color:#78d9c6}label{display:flex;justify-content:space-between;color:#a5bac9;font-size:12px}select,button{font:inherit;color:#d9e6ef;background:#1a2a38;border:1px solid #32495b;border-radius:6px;padding:7px 9px}select{width:100%;font-size:12px;margin:6px 0 13px}input[type=range]{width:100%;accent-color:#69cfca;margin:6px 0 13px}button{font-size:12px;cursor:pointer}button:hover{border-color:#6b9ba9}.buttons{display:flex;gap:7px;margin:12px 0}.buttons button{flex:1}.check{display:flex;justify-content:flex-start;gap:7px;margin:10px 0}input[type=checkbox]{accent-color:#69cfca}.hint{color:#6d8a9d;font-size:10px;margin:0 0 12px}.stats{position:absolute;left:30px;bottom:26px;display:flex;gap:28px;pointer-events:none}.value{font:23px ui-monospace,monospace}.unit{font-size:10px;color:#7490a3}.legend{position:absolute;left:30px;bottom:99px;width:235px;color:#87a5b8;font-size:10px}.bar{height:4px;margin:6px 0;background:linear-gradient(90deg,#087eff,#122433,#ff9018)}details{margin-top:12px;color:#8aa5b6;font-size:11px}pre{font-size:10px;white-space:pre-wrap;max-height:220px;overflow:auto}#error{position:absolute;left:30px;bottom:160px;max-width:65vw;background:#3a1c28;color:#ffc8ca;padding:15px;display:none}#notice{position:absolute;left:30px;top:165px;font-size:11px;color:#97bdc9;max-width:55vw;pointer-events:none}@media(max-width:1050px){aside{width:235px;right:16px;padding:15px}header{left:23px}h1{font-size:24px}.stats{left:23px;gap:20px}}
+</style>
+<canvas id="scene"></canvas>
+<header><small>PHOTONICS LAB / MAXWELL FDTD</small><h1>光子晶体 · 波的路径</h1><div class="sub">自编电磁场求解器 · 介质点阵与缺陷导光</div><div class="help">拖拽平移 · 滚轮以指针为中心缩放 · 双击全域</div></header>
+<div id="notice">正建立 Yee 网格，从零电磁场开始激励。</div>
+<aside><div id="status">载入 WebGPU…</div>
+<label>缺陷结构</label><select id="preset"><option value="2">90° 弯折通道</option><option value="1">直通道</option><option value="3">点缺陷微腔 · 内部光源</option><option value="0">完整晶体 · 对照</option></select>
+<label>归一化频率 f a / c <span id="frequencyValue">0.360</span></label><input id="frequency" type="range" min="0.20" max="0.48" value="0.36" step="0.001">
+<div class="hint">连续改变驱动频率；保留波场与光源相位。</div>
+<label>缺陷柱半径 r / a <span id="defectValue">0.00</span></label><input id="defect" type="range" min="0" max="0.20" value="0" step="0.01">
+<div class="hint">0 = 移除柱子；0.20 = 恢复完整点阵。</div>
+<label>网格密度</label><select id="resolution"><option value="32">32 点 / a · 1024 × 768</option><option value="64">64 点 / a · 2048 × 1536</option><option value="96">96 点 / a · 3072 × 2304</option></select>
+<label>场的显示</label><select id="mode"><option value="0">瞬时电场 Ez · 蓝负 / 橙正</option><option value="1">平均电场强度 〈Ez²〉</option></select>
+<label>显示增益 <span id="gainValue">20</span></label><input id="gain" type="range" min="4" max="60" value="20" step="1">
+<label class="check"><input id="edit" type="checkbox">点击晶柱移除 / 恢复</label>
+<label class="check"><input id="source" type="checkbox" checked>持续光源（关闭后观察逸散）</label>
+<div class="buttons"><button id="pause">暂停</button><button id="reset">重新起波</button><button id="home">全域</button></div>
+<div class="buttons"><button id="capture">保存图片</button><button id="verify">数值核对</button></div>
+<details><summary>模型与核对结果</summary><p>二维 TM：Ez、Hx、Hy，介质柱 εr=12、μr=1，半径 0.20a。边缘为 2a 宽吸收层。缺陷和网格改变时重新从零场演化。不是三维光子晶体器件的定量设计。</p><div class="buttons"><button id="performance">计算与渲染性能</button></div><pre id="report">尚未运行核对。</pre></details></aside>
+<div class="legend"><span id="legend">瞬时电场：蓝色负值 → 橙色正值</span><div class="bar" id="bar"></div>细圆环：介质柱 · 青色：电流激励源</div>
+<div class="stats"><div><div class="value" id="time">0.0</div><div class="unit">ct / a</div></div><div><div class="value" id="cells">—</div><div class="unit">百万网格</div></div><div><div class="value" id="fps">—</div><div class="unit">FPS</div></div><div><div class="value" id="rate">—</div><div class="unit">百万单元步 / s</div></div></div>
+<pre id="error"></pre><script type="module" src="app.js"></script></html>
