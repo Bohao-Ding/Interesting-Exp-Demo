@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-28",
+  "gpu": "NVIDIA GeForce RTX 5070 Ti",
+  "grid": "128 × 128",
+  "eta": 0.003,
+  "poissonRelativeL2": 7.914027535529349e-7,
+  "diffusion": {"steps": 256, "time": 1.5079644737231006, "relativeL2": 3.726726870414548e-7, "maxAbsVorticity": 0, "finite": true},
+  "sheet": {
+    "grid": "256 × 256",
+    "initial": {"time": 0, "finite": true, "meanMagneticEnergy": 0.4481296515906874, "meanKineticEnergy": 0, "dissipation": 0.007711965131865083, "maxAbsCurrent": 8.256291216292919, "maxAbsVorticity": 0, "sheetFluxContrast": 0.07761526107788086},
+    "final": {"time": 18.00132590506951, "finite": true, "meanMagneticEnergy": 0.36348045842422005, "meanKineticEnergy": 0.0005865134988854913, "dissipation": 0.0027327323152062893, "maxAbsCurrent": 3.1251252579683557, "maxAbsVorticity": 0.6207650303840637, "sheetFluxContrast": 0.29803037643432617},
+    "integratedDissipation": 0.08418554373246336,
+    "energyBalanceResidual": -0.00012286406488148938
+  },
+  "strongPerturbation": {"amplitude": 0.3, "final": {"time": 18.00132590506951, "finite": true, "meanMagneticEnergy": 0.363394123946274, "meanKineticEnergy": 0.0007003882788799464, "dissipation": 0.0027112504847075078, "maxAbsCurrent": 2.9270344282301135, "maxAbsVorticity": 0.8288668394088745, "sheetFluxContrast": 0.32095640897750854}},
+  "comparison": {
+    "time": 6.031857894892402,
+    "timeStepRelativeL2": {"flux": 0.0000034594272832825336, "vorticity": 0.0003719280301440823},
+    "gridRelativeL2": {
+      "128_vs_256": {"flux": 0.0021100464707207328, "vorticity": 0.11194758536868675},
+      "256_vs_512": {"flux": 0.000527112431469877, "vorticity": 0.0280484607374472},
+      "512_vs_1024": {"flux": 0.00013673929127508007, "vorticity": 0.0071329947266758125}
+    }
+  },
+  "highDiffusivity": {"grid": "1024 × 1024", "eta": 0.008, "amplitude": 0.3, "dt": 0.0005176813526724955, "final": {"time": 2.070725410689982, "finite": true, "meanMagneticEnergy": 0.4130914253324892, "meanKineticEnergy": 0.008135734751450787, "dissipation": 0.013306905768830476, "maxAbsCurrent": 5.882961225233237, "maxAbsVorticity": 2.5937154293060303, "sheetFluxContrast": 0.06418204307556152}}
+}

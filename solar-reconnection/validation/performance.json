@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-28",
+  "gpu": "NVIDIA GeForce RTX 5070 Ti",
+  "driver": "610.88",
+  "method": "128 simulation steps, submit to GPU completion wall time in ms, no rendering; one warmup followed by three sequential trials; unpaired versions",
+  "baseline": {"integrator": "midpoint RK2", "bracket": "centered", "amplitude": 0.055, "samplesMs": {"256": [9.5, 8.9, 9.0], "512": [22.4, 20.4, 19.8], "1024": [64.6, 65.7, 71.0]}},
+  "current": {"integrator": "AB2", "bracket": "Arakawa", "amplitude": 0.2, "samplesMs": {"256": [5.1, 6.2, 6.1], "512": [8.8, 11.9, 11.3], "1024": [49.9, 39.8, 34.1]}},
+  "note": "Different time steps, initial perturbations, and nonlinear discretizations; measurements do not isolate an individual optimization."
+}
