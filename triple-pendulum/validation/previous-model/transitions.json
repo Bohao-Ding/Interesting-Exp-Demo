@@ -1,0 +1,849 @@
+{
+  "sensor": "12 bit, 100 Hz, 10 ms delay",
+  "disturbanceAmplitudeN": 0.02,
+  "seed": 7201,
+  "planningBudgetSeconds": 5,
+  "results": [
+    {
+      "source": 0,
+      "target": 1,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.004402799997479,
+      "planningMetrics": {
+        "angleMax": 1.9999999925439664,
+        "angularSpeedMax": 0.0000015051778713124022,
+        "cartPosition": 4.292407895291322e-8,
+        "cartSpeed": 0.000003589255572137718,
+        "railMax": 0.0005609212809773147,
+        "speedMax": 0.0010027449138670067
+      }
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.07579010000336,
+      "planningMetrics": {
+        "angleMax": 1.9999999976231404,
+        "angularSpeedMax": 0.000001642005013809008,
+        "cartPosition": 4.8733102619997e-8,
+        "cartSpeed": 0.00000572142280872547,
+        "railMax": 0.0005162260797283722,
+        "speedMax": 0.0009589256481207078
+      }
+    },
+    {
+      "source": 0,
+      "target": 3,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.094104599993443,
+      "planningMetrics": null
+    },
+    {
+      "source": 0,
+      "target": 4,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.052150300005451,
+      "planningMetrics": null
+    },
+    {
+      "source": 0,
+      "target": 5,
+      "planning": "candidate",
+      "reason": null,
+      "planningSeconds": 0.06412270000146236,
+      "planningMetrics": {
+        "angleMax": 0.03585805311966388,
+        "angularSpeedMax": 0.07956278609828837,
+        "cartPosition": 0.0015760609784788908,
+        "cartSpeed": 0.010300511699968793,
+        "railMax": 0.6598562715708232,
+        "speedMax": 1.8945153149855076
+      },
+      "closedLoop": {
+        "finite": true,
+        "impacts": 0,
+        "maxCart": 0.6623858302226263,
+        "finalErrorDeg": [
+          0.8874917738270696,
+          1.3414788866328238,
+          1.0625040977880524
+        ],
+        "maxErrorLastSecondDeg": 2.273780819593534
+      }
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.104102900004364,
+      "planningMetrics": null
+    },
+    {
+      "source": 0,
+      "target": 7,
+      "planning": "candidate",
+      "reason": null,
+      "planningSeconds": 0.0374436000129208,
+      "planningMetrics": {
+        "angleMax": 0.019545206623327573,
+        "angularSpeedMax": 0.10873881845122534,
+        "cartPosition": 0.022078864531198995,
+        "cartSpeed": 0.11359485732634556,
+        "railMax": 0.6537420563377717,
+        "speedMax": 2.2565390875713476
+      },
+      "closedLoop": {
+        "finite": true,
+        "impacts": 0,
+        "maxCart": 0.6584097065640441,
+        "finalErrorDeg": [
+          -1.6877565973953061,
+          -1.3622226118778935,
+          -1.0438992580175825
+        ],
+        "maxErrorLastSecondDeg": 2.199558992666192
+      }
+    },
+    {
+      "source": 1,
+      "target": 0,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.153600000005099,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.4118750898707271e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.0213987000024645,
+      "planningMetrics": {
+        "angleMax": 0.7703865582291772,
+        "angularSpeedMax": 1.8549238529739083,
+        "cartPosition": 0.00021956720371980691,
+        "cartSpeed": 0.00003674560762854975,
+        "railMax": 0.0010864277510562398,
+        "speedMax": 0.0041483150411328685
+      }
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.125177000008989,
+      "planningMetrics": {
+        "angleMax": 1.845668839842892,
+        "angularSpeedMax": 1.8618569624171766,
+        "cartPosition": 0.00004665995998229225,
+        "cartSpeed": 0.0000022521293306121553,
+        "railMax": 0.00004665995998229225,
+        "speedMax": 0.000030098501233893247
+      }
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.042880399996648,
+      "planningMetrics": {
+        "angleMax": 1.2304293926219798,
+        "angularSpeedMax": 6.008430808896489,
+        "cartPosition": 0.000051005201748566045,
+        "cartSpeed": 0.000016132872235624518,
+        "railMax": 0.000051005201748566045,
+        "speedMax": 0.000016132872235624518
+      }
+    },
+    {
+      "source": 1,
+      "target": 5,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.034264300003997,
+      "planningMetrics": {
+        "angleMax": 1.2818121742238278,
+        "angularSpeedMax": 1.35826216037594,
+        "cartPosition": 0.000018488001914628144,
+        "cartSpeed": 0.000006700260926911881,
+        "railMax": 0.000018488001914628144,
+        "speedMax": 0.000007089564290809403
+      }
+    },
+    {
+      "source": 1,
+      "target": 6,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.202972800005227,
+      "planningMetrics": {
+        "angleMax": 0.8556742218882002,
+        "angularSpeedMax": 1.0088079566748718,
+        "cartPosition": 0.042649582115892495,
+        "cartSpeed": 0.07456003585890807,
+        "railMax": 0.05756059872455553,
+        "speedMax": 0.14690752862634718
+      }
+    },
+    {
+      "source": 1,
+      "target": 7,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.191632100002607,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.4118750898707271e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 2,
+      "target": 0,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.171986899993499,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.0805543125771637e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.194310599996243,
+      "planningMetrics": {
+        "angleMax": 1.5630449060317337,
+        "angularSpeedMax": 7.083595699117054,
+        "cartPosition": 4.7938792007655454e-8,
+        "cartSpeed": 1.447579315903983e-8,
+        "railMax": 4.7938792007655454e-8,
+        "speedMax": 1.4475793166150076e-8
+      }
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.208525300011388,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.0805543125771637e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.089273600009619,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.0805543125771637e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.063250399995013,
+      "planningMetrics": {
+        "angleMax": 1.716302785413858,
+        "angularSpeedMax": 7.2776685156525245,
+        "cartPosition": 1.4861312804930091e-7,
+        "cartSpeed": 4.295363630309267e-8,
+        "railMax": 1.4861312804930091e-7,
+        "speedMax": 4.2953636304182665e-8
+      }
+    },
+    {
+      "source": 2,
+      "target": 6,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.0692828000028385,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.0805543125771637e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 2,
+      "target": 7,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.106710000007297,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.0805543125771637e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 3,
+      "target": 0,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.097802899996168,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.3610959587810951e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 3,
+      "target": 1,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.027888500000699,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.3610959587810951e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 3,
+      "target": 2,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.099154900002759,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.3610959587810951e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.017696100010653,
+      "planningMetrics": {
+        "angleMax": 1.7528618429213751,
+        "angularSpeedMax": 22.38139029757811,
+        "cartPosition": 0.0001070686926657492,
+        "cartSpeed": 0.000025471944936846723,
+        "railMax": 0.0001070686926657492,
+        "speedMax": 0.000032160533181270494
+      }
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.188670099989395,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.3610959587810951e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.19191179999325,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.3610959587810951e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.1558886999991955,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.3610959587810951e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 4,
+      "target": 0,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.054652599996189,
+      "planningMetrics": {
+        "angleMax": 0.9780665131668691,
+        "angularSpeedMax": 1.7680385136323746,
+        "cartPosition": 0.000001824324137036479,
+        "cartSpeed": 3.307814795960466e-8,
+        "railMax": 0.0008487508160306638,
+        "speedMax": 0.002833167395126311
+      }
+    },
+    {
+      "source": 4,
+      "target": 1,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.023078099999111,
+      "planningMetrics": {
+        "angleMax": 1.999368120337925,
+        "angularSpeedMax": 4.622153694164553,
+        "cartPosition": 0.00025913453142125553,
+        "cartSpeed": 0.0004228134913616295,
+        "railMax": 0.038961204691447836,
+        "speedMax": 0.1406946368936092
+      }
+    },
+    {
+      "source": 4,
+      "target": 2,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.186089299997548,
+      "planningMetrics": {
+        "angleMax": 1.8048391229609095,
+        "angularSpeedMax": 1.784808669207762,
+        "cartPosition": 0.000508997119301829,
+        "cartSpeed": 0.0001936920262086124,
+        "railMax": 0.000508997119301829,
+        "speedMax": 0.0001936920262086124
+      }
+    },
+    {
+      "source": 4,
+      "target": 3,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.046572999999626,
+      "planningMetrics": {
+        "angleMax": 1.9999671239313628,
+        "angularSpeedMax": 1.5046232765405545,
+        "cartPosition": 0.040628594569023894,
+        "cartSpeed": 0.28807394355385046,
+        "railMax": 0.2834568728614538,
+        "speedMax": 0.4486587716215753
+      }
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.063588600009098,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.1780278712188292e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.16856099999859,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.1780278712188292e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 4,
+      "target": 7,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.015340500001912,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.1780278712188292e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 5,
+      "target": 0,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.086459500002093,
+      "planningMetrics": {
+        "angleMax": 1.9998418007900738,
+        "angularSpeedMax": 2.5877360106336615,
+        "cartPosition": 0.000026205231601591337,
+        "cartSpeed": 0.000010386334541073993,
+        "railMax": 0.000026205231601591337,
+        "speedMax": 0.0000104666573631466
+      }
+    },
+    {
+      "source": 5,
+      "target": 1,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.204433799997787,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.4186003416407538e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 5,
+      "target": 2,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.2110619000013685,
+      "planningMetrics": {
+        "angleMax": 1.8717715067364178,
+        "angularSpeedMax": 3.959994890473994,
+        "cartPosition": 0.00005350975755068198,
+        "cartSpeed": 0.00003980772841321688,
+        "railMax": 0.0015043288888629217,
+        "speedMax": 0.006766331689255471
+      }
+    },
+    {
+      "source": 5,
+      "target": 3,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.072032299998682,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.4186003416407538e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 5,
+      "target": 4,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.121201000001747,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.4186003416407538e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.177147900001728,
+      "planningMetrics": {
+        "angleMax": 1.2035758912918522,
+        "angularSpeedMax": 6.366232565074898,
+        "cartPosition": 0.00007452165241308716,
+        "cartSpeed": 0.000012366210214023799,
+        "railMax": 0.00007452165241308716,
+        "speedMax": 0.000023821042123816765
+      }
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.0519024999957765,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.4186003416407538e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 6,
+      "target": 0,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.157199099994614,
+      "planningMetrics": {
+        "angleMax": 1.388880297935963,
+        "angularSpeedMax": 4.766432115367647,
+        "cartPosition": 0.00003867777505490068,
+        "cartSpeed": 0.00001478648359971097,
+        "railMax": 0.00003867777505490068,
+        "speedMax": 0.000014868140230043906
+      }
+    },
+    {
+      "source": 6,
+      "target": 1,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.025904099995387,
+      "planningMetrics": {
+        "angleMax": 1.79135794809111,
+        "angularSpeedMax": 0.5134813263107698,
+        "cartPosition": 0.0001796700083632489,
+        "cartSpeed": 0.000035021037186167864,
+        "railMax": 0.0001796700083632489,
+        "speedMax": 0.00006286675462654049
+      }
+    },
+    {
+      "source": 6,
+      "target": 2,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.136145399999805,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.084474430896146e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 6,
+      "target": 3,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.035724800007301,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.084474430896146e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 6,
+      "target": 4,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.00484380000853,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.084474430896146e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 6,
+      "target": 5,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.004258400003891,
+      "planningMetrics": {
+        "angleMax": 1.5206820567041825,
+        "angularSpeedMax": 4.222188943343098,
+        "cartPosition": 1.312167379137698e-8,
+        "cartSpeed": 5.3143578871003255e-9,
+        "railMax": 1.312167379137698e-8,
+        "speedMax": 5.314357912364152e-9
+      }
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.047846399989794,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.084474430896146e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 7,
+      "target": 0,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.113835299998755,
+      "planningMetrics": {
+        "angleMax": 1.0178814943883905,
+        "angularSpeedMax": 7.343419571985739,
+        "cartPosition": 0.5592807964019264,
+        "cartSpeed": 2.0030963061488603,
+        "railMax": 0.8265317851894911,
+        "speedMax": 2.0030963061488603
+      }
+    },
+    {
+      "source": 7,
+      "target": 1,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.192802599995048,
+      "planningMetrics": {
+        "angleMax": 1.7348908134301895,
+        "angularSpeedMax": 2.8992702484797825,
+        "cartPosition": 1.838331415802449e-10,
+        "cartSpeed": 5.937671201930751e-11,
+        "railMax": 1.838331415802449e-10,
+        "speedMax": 5.937671201930751e-11
+      }
+    },
+    {
+      "source": 7,
+      "target": 2,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.026844699998037,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.3638966456688757e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 7,
+      "target": 3,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.035343100011232,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.3638966456688757e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 7,
+      "target": 4,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.108100199999171,
+      "planningMetrics": {
+        "angleMax": 0.8267690876896878,
+        "angularSpeedMax": 12.377908713550266,
+        "cartPosition": 0.00009309390633023705,
+        "cartSpeed": 0.00003427719271200799,
+        "railMax": 0.00009309390633023705,
+        "speedMax": 0.000034287470296997396
+      }
+    },
+    {
+      "source": 7,
+      "target": 5,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.208087500010151,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.3638966456688757e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    },
+    {
+      "source": 7,
+      "target": 6,
+      "planning": "not found in 5 s",
+      "reason": "未找到满足终点与轨道约束的轨迹",
+      "planningSeconds": 5.042816100001801,
+      "planningMetrics": {
+        "angleMax": 2,
+        "angularSpeedMax": 1.3638966456688757e-14,
+        "cartPosition": 0,
+        "cartSpeed": 0,
+        "railMax": 0,
+        "speedMax": 0
+      }
+    }
+  ]
+}

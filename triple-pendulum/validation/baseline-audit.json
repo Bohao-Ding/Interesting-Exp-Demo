@@ -1,0 +1,31 @@
+{
+  "trajectories": {
+    "0-7": {
+      "duration": 3.5,
+      "maxOmegaRadS": [
+        10.018025450286814,
+        18.10260485574361,
+        39.863872203227345
+      ],
+      "oneMsError": 0.0000055755054100270485,
+      "halfMsError": 2.975736961563502e-7
+    },
+    "0-5": {
+      "duration": 3.5,
+      "maxOmegaRadS": [
+        19.90593848319824,
+        18.41165858796118,
+        32.70157167640227
+      ],
+      "oneMsError": 0.0000447346017937722,
+      "halfMsError": 0.000002995414616541181
+    }
+  },
+  "benchmark": {
+    "physicsSteps": 20000,
+    "physicsMs": 38.0754,
+    "observerSamples": 2000,
+    "observerMs": 93.47850000000003
+  },
+  "displaySnapshotHz": 12.5
+}

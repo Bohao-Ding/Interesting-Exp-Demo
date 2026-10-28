@@ -1,0 +1,226 @@
+{
+  "normal": [
+    {
+      "mask": 0,
+      "settings": {
+        "hz": 100,
+        "bits": 12,
+        "delay": 10,
+        "ideal": false,
+        "amplitude": 0.02
+      },
+      "time": 20.00000000000146,
+      "finite": true,
+      "lostAt": null,
+      "maxAngleDeg": 0.3293477775103661,
+      "maxCart": 0.0033760458205851296,
+      "maxCommand": 1.1453672644826254,
+      "impacts": 0,
+      "finalErrorDeg": [
+        -0.0041952024013637255,
+        -0.08226694664260788,
+        -0.18542227115342996
+      ]
+    },
+    {
+      "mask": 1,
+      "settings": {
+        "hz": 100,
+        "bits": 12,
+        "delay": 10,
+        "ideal": false,
+        "amplitude": 0.02
+      },
+      "time": 20.00000000000146,
+      "finite": true,
+      "lostAt": null,
+      "maxAngleDeg": 0.5244312294115759,
+      "maxCart": 0.02298370666533814,
+      "maxCommand": 0.4934091616896731,
+      "impacts": 0,
+      "finalErrorDeg": [
+        -0.049425465365263335,
+        -0.15356684317444355,
+        -0.44595799331006974
+      ]
+    },
+    {
+      "mask": 2,
+      "settings": {
+        "hz": 100,
+        "bits": 12,
+        "delay": 10,
+        "ideal": false,
+        "amplitude": 0.02
+      },
+      "time": 20.00000000000146,
+      "finite": true,
+      "lostAt": null,
+      "maxAngleDeg": 1.4287361362877529,
+      "maxCart": 0.05676089780926794,
+      "maxCommand": 3.1189217590454437,
+      "impacts": 0,
+      "finalErrorDeg": [
+        -0.009063248199234366,
+        0.052596338522294,
+        0.366528899373632
+      ]
+    },
+    {
+      "mask": 3,
+      "settings": {
+        "hz": 100,
+        "bits": 12,
+        "delay": 10,
+        "ideal": false,
+        "amplitude": 0.02
+      },
+      "time": 20.00000000000146,
+      "finite": true,
+      "lostAt": null,
+      "maxAngleDeg": 0.9793271478456965,
+      "maxCart": 0.07700680044891994,
+      "maxCommand": 3.035118292276334,
+      "impacts": 0,
+      "finalErrorDeg": [
+        0.27278289247653514,
+        0.1395981764564915,
+        0.11475352272628649
+      ]
+    },
+    {
+      "mask": 4,
+      "settings": {
+        "hz": 100,
+        "bits": 12,
+        "delay": 10,
+        "ideal": false,
+        "amplitude": 0.02
+      },
+      "time": 20.00000000000146,
+      "finite": true,
+      "lostAt": null,
+      "maxAngleDeg": 4.305439031871057,
+      "maxCart": 0.2501469504732967,
+      "maxCommand": 11.229357417461667,
+      "impacts": 0,
+      "finalErrorDeg": [
+        2.740168185864891,
+        2.5144529512011524,
+        2.2177288886662274
+      ]
+    },
+    {
+      "mask": 5,
+      "settings": {
+        "hz": 100,
+        "bits": 12,
+        "delay": 10,
+        "ideal": false,
+        "amplitude": 0.02
+      },
+      "time": 20.00000000000146,
+      "finite": true,
+      "lostAt": null,
+      "maxAngleDeg": 3.4700783392536145,
+      "maxCart": 0.23896959842874743,
+      "maxCommand": 11.21737953628122,
+      "impacts": 0,
+      "finalErrorDeg": [
+        1.9791665647308814,
+        1.9508761655264542,
+        1.6991948058570023
+      ]
+    },
+    {
+      "mask": 6,
+      "settings": {
+        "hz": 100,
+        "bits": 12,
+        "delay": 10,
+        "ideal": false,
+        "amplitude": 0.02
+      },
+      "time": 20.00000000000146,
+      "finite": true,
+      "lostAt": null,
+      "maxAngleDeg": 5.268621222002064,
+      "maxCart": 0.23923337696981997,
+      "maxCommand": 6.484192977462608,
+      "impacts": 0,
+      "finalErrorDeg": [
+        1.19330793353669,
+        1.3494237485147678,
+        1.3960835307375539
+      ]
+    },
+    {
+      "mask": 7,
+      "settings": {
+        "hz": 100,
+        "bits": 12,
+        "delay": 10,
+        "ideal": false,
+        "amplitude": 0.02
+      },
+      "time": 20.00000000000146,
+      "finite": true,
+      "lostAt": null,
+      "maxAngleDeg": 3.5330335308149508,
+      "maxCart": 0.22170633591574956,
+      "maxCommand": 3.7846200637350074,
+      "impacts": 0,
+      "finalErrorDeg": [
+        1.6403731226666904,
+        1.2862674633302993,
+        0.9180366028167513
+      ]
+    }
+  ],
+  "stress": [
+    {
+      "mask": 7,
+      "settings": {
+        "hz": 50,
+        "bits": 10,
+        "delay": 50,
+        "ideal": false,
+        "amplitude": 0.1
+      },
+      "time": 20.00000000000146,
+      "finite": true,
+      "lostAt": 7.170000000000729,
+      "maxAngleDeg": 179.99997530386398,
+      "maxCart": 0.7,
+      "maxCommand": 22,
+      "impacts": 1,
+      "finalErrorDeg": [
+        -179.68964844429362,
+        179.89225596267093,
+        178.19625593729518
+      ]
+    },
+    {
+      "mask": 7,
+      "settings": {
+        "hz": 100,
+        "bits": 12,
+        "delay": 10,
+        "ideal": false,
+        "amplitude": 0.1
+      },
+      "time": 20.00000000000146,
+      "finite": true,
+      "lostAt": 11.879999999998855,
+      "maxAngleDeg": 179.99883214184717,
+      "maxCart": 0.7,
+      "maxCommand": 22,
+      "impacts": 1,
+      "finalErrorDeg": [
+        178.06568684547267,
+        179.29141178958773,
+        -175.14134339344758
+      ]
+    }
+  ]
+}

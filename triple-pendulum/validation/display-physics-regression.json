@@ -1,0 +1,6 @@
+{
+  "normalVsPreviousMaxStateDifference": 0.0,
+  "delayedVsNormalMaxStateDifference": 0,
+  "simulationSeconds": 1.9999999999998905,
+  "description": "motion publication changed; plant and controller dynamics unchanged"
+}

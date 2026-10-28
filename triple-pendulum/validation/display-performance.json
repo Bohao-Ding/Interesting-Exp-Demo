@@ -1,0 +1,186 @@
+{
+  "targetPaintFps": 150,
+  "measuredBrowser": "Codex in-app browser",
+  "measurement": "Actual requestAnimationFrame canvas draws; motion FPS counts only advancing simulation presentation times. This is not a monitor scanout measurement.",
+  "baseline": {
+    "paintFpsCap": 60,
+    "motionPublicationHz": 100
+  },
+  "current": {
+    "paintFpsCap": null,
+    "motionPublicationHz": 250,
+    "physicsHz": 1000,
+    "chartHz": 10,
+    "interpolation": "monotonic buffered Hermite; linear across impulses"
+  },
+  "runs": [
+    {
+      "phase": "downward equilibrium",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "pixelRatio": 1.25,
+        "canvasWidth": 1200,
+        "canvasHeight": 631
+      },
+      "simulationSeconds": [
+        42.99,
+        52
+      ],
+      "oneSecondWindows": 10,
+      "paintFpsRange": [
+        259,
+        261
+      ],
+      "motionFpsRange": [
+        259,
+        261
+      ],
+      "physicsHzRange": [
+        992.06,
+        1002.79
+      ],
+      "frameP95MsRange": [
+        3.9,
+        4
+      ],
+      "paintP95MsRange": [
+        0.1,
+        0.1
+      ],
+      "displayDelayMsRange": [
+        7.84,
+        8.66
+      ],
+      "impacts": 0
+    },
+    {
+      "phase": "DDD to DUD swing-up",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "pixelRatio": 1.25,
+        "canvasWidth": 1200,
+        "canvasHeight": 631
+      },
+      "simulationSeconds": [
+        53,
+        56.99
+      ],
+      "oneSecondWindows": 5,
+      "paintFpsRange": [
+        258,
+        260
+      ],
+      "motionFpsRange": [
+        258,
+        260
+      ],
+      "physicsHzRange": [
+        988.84,
+        1003.4
+      ],
+      "frameP95MsRange": [
+        4,
+        4
+      ],
+      "paintP95MsRange": [
+        0.1,
+        0.1
+      ],
+      "displayDelayMsRange": [
+        0.72,
+        8.65
+      ],
+      "impacts": 0
+    },
+    {
+      "phase": "zoomed DUD to DDD release",
+      "viewport": {
+        "width": 944,
+        "height": 903,
+        "pixelRatio": 1.25,
+        "canvasWidth": 830,
+        "canvasHeight": 860
+      },
+      "simulationSeconds": [
+        130.05,
+        138.06
+      ],
+      "oneSecondWindows": 9,
+      "paintFpsRange": [
+        260,
+        261
+      ],
+      "motionFpsRange": [
+        260,
+        261
+      ],
+      "physicsHzRange": [
+        996.02,
+        1002.59
+      ],
+      "frameP95MsRange": [
+        3.9,
+        4
+      ],
+      "paintP95MsRange": [
+        0.1,
+        0.1
+      ],
+      "displayDelayMsRange": [
+        6.16,
+        10.74
+      ],
+      "impacts": 0
+    },
+    {
+      "phase": "resumed rendering after pause",
+      "viewport": {
+        "width": 944,
+        "height": 903,
+        "pixelRatio": 1.25,
+        "canvasWidth": 830,
+        "canvasHeight": 860
+      },
+      "simulationSeconds": [
+        206.78,
+        213.79
+      ],
+      "oneSecondWindows": 8,
+      "paintFpsRange": [
+        245,
+        259
+      ],
+      "motionFpsRange": [
+        245,
+        259
+      ],
+      "physicsHzRange": [
+        988.92,
+        1010.53
+      ],
+      "frameP95MsRange": [
+        4,
+        4
+      ],
+      "paintP95MsRange": [
+        0.2,
+        0.2
+      ],
+      "displayDelayMsRange": [
+        4.74,
+        11.68
+      ],
+      "impacts": 0
+    }
+  ],
+  "validation": {
+    "physicsRegression": "display-physics-regression.json",
+    "presentationClock": "presentation.json"
+  },
+  "limitations": [
+    "Browser refresh scheduling and display hardware can cap achievable FPS.",
+    "Measurements cover the recorded foreground windows, not every device or background tabs."
+  ]
+}

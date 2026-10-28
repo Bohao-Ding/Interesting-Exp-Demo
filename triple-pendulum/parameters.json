@@ -1,0 +1,11 @@
+{
+  "lengths": [0.323, 0.419, 0.484],
+  "masses": [0.876, 0.938, 0.553],
+  "density": 7850,
+  "cartMass": 2,
+  "gravity": 9.81,
+  "damping": [0.012, 0.009, 0.006],
+  "motor": {"delay": 0.005, "tau": 0.02},
+  "limits": {"x": 0.7, "v": 3, "a": 22},
+  "planning": {"omega": 24, "relativeOmega": 32, "rail": 0.62, "speed": 2.6}
+}

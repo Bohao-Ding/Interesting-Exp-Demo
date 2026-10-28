@@ -1,0 +1,518 @@
+{
+  "sensor": "12 bit, 100 Hz, 10 ms",
+  "disturbanceN": 0.02,
+  "seed": 7201,
+  "description": "reference graph survey; targets without a reference were not declared unreachable",
+  "results": [
+    {
+      "source": 0,
+      "target": 1,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "route": [
+        2
+      ],
+      "finite": true,
+      "capturedIntermediateAt": null,
+      "stabilizedAt": 5.5200000000001745,
+      "stage": "completed",
+      "impacts": 0,
+      "maxCart": 0.6482422248607583,
+      "finalErrorDeg": [
+        2.710952217358101,
+        1.6838290468560055,
+        -0.729654979000637
+      ]
+    },
+    {
+      "source": 0,
+      "target": 3,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 0,
+      "target": 4,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 0,
+      "target": 5,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 0,
+      "target": 7,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 1,
+      "target": 0,
+      "route": [
+        0
+      ],
+      "finite": true,
+      "capturedIntermediateAt": 9.150000000000373,
+      "stabilizedAt": 10.03999999999988,
+      "stage": "completed",
+      "impacts": 0,
+      "maxCart": 0.11975747790416567,
+      "finalErrorDeg": [
+        -1.1391251444523152,
+        -0.5872111957670292,
+        0.7174887712258463
+      ]
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "route": [
+        0,
+        2
+      ],
+      "finite": true,
+      "capturedIntermediateAt": 9.150000000000373,
+      "stabilizedAt": 16.8499999999976,
+      "stage": "completed",
+      "impacts": 0,
+      "maxCart": 0.6379032304021472,
+      "finalErrorDeg": [
+        2.6688948425167993,
+        1.7366665283238119,
+        -0.26487593699485373
+      ]
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 1,
+      "target": 5,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 1,
+      "target": 6,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 1,
+      "target": 7,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 2,
+      "target": 0,
+      "route": [
+        0
+      ],
+      "finite": true,
+      "capturedIntermediateAt": 8.750000000000595,
+      "stabilizedAt": 9.790000000000019,
+      "stage": "completed",
+      "impacts": 0,
+      "maxCart": 0.08014611123088078,
+      "finalErrorDeg": [
+        -0.22132137259062415,
+        0.2746116930958487,
+        0.9915386501237764
+      ]
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 2,
+      "target": 6,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 2,
+      "target": 7,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 3,
+      "target": 0,
+      "route": [
+        0
+      ],
+      "finite": true,
+      "capturedIntermediateAt": 9.190000000000351,
+      "stabilizedAt": 10.189999999999797,
+      "stage": "completed",
+      "impacts": 0,
+      "maxCart": 0.21827629084275768,
+      "finalErrorDeg": [
+        -0.4332885509907692,
+        0.07194563561838786,
+        0.9134682212881302
+      ]
+    },
+    {
+      "source": 3,
+      "target": 1,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 3,
+      "target": 2,
+      "route": [
+        0,
+        2
+      ],
+      "finite": true,
+      "capturedIntermediateAt": 9.190000000000351,
+      "stabilizedAt": 16.859999999997612,
+      "stage": "completed",
+      "impacts": 0,
+      "maxCart": 0.6340935685280513,
+      "finalErrorDeg": [
+        2.6897748860024153,
+        1.866091360482515,
+        0.07228418342116001
+      ]
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 4,
+      "target": 0,
+      "route": [
+        0
+      ],
+      "finite": true,
+      "capturedIntermediateAt": 7.250000000000752,
+      "stabilizedAt": 8.130000000000939,
+      "stage": "completed",
+      "impacts": 0,
+      "maxCart": 0.055409371960999654,
+      "finalErrorDeg": [
+        1.211756982835377,
+        0.7419044211775981,
+        -0.6449509811700822
+      ]
+    },
+    {
+      "source": 4,
+      "target": 1,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 4,
+      "target": 2,
+      "route": [
+        0,
+        2
+      ],
+      "finite": true,
+      "capturedIntermediateAt": 7.250000000000752,
+      "stabilizedAt": 14.859999999997209,
+      "stage": "completed",
+      "impacts": 0,
+      "maxCart": 0.6447608145676467,
+      "finalErrorDeg": [
+        1.9032565920402795,
+        1.2146091902821359,
+        -0.4138384334257373
+      ]
+    },
+    {
+      "source": 4,
+      "target": 3,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 4,
+      "target": 7,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 5,
+      "target": 0,
+      "route": [
+        0
+      ],
+      "finite": true,
+      "capturedIntermediateAt": 6.800000000000602,
+      "stabilizedAt": 7.730000000000913,
+      "stage": "completed",
+      "impacts": 0,
+      "maxCart": 0.14573147373336187,
+      "finalErrorDeg": [
+        1.1079859310787479,
+        0.556984735498109,
+        -0.1594202262923076
+      ]
+    },
+    {
+      "source": 5,
+      "target": 1,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 5,
+      "target": 2,
+      "route": [
+        0,
+        2
+      ],
+      "finite": true,
+      "capturedIntermediateAt": 6.800000000000602,
+      "stabilizedAt": 14.829999999997225,
+      "stage": "completed",
+      "impacts": 0,
+      "maxCart": 0.6440478038820213,
+      "finalErrorDeg": [
+        1.633624673766328,
+        1.1531854655434406,
+        -0.3052966849267115
+      ]
+    },
+    {
+      "source": 5,
+      "target": 3,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 5,
+      "target": 4,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 6,
+      "target": 0,
+      "route": [
+        0
+      ],
+      "finite": true,
+      "capturedIntermediateAt": 8.310000000000839,
+      "stabilizedAt": 9.200000000000346,
+      "stage": "completed",
+      "impacts": 0,
+      "maxCart": 0.23250024655549997,
+      "finalErrorDeg": [
+        -0.921955680226398,
+        -0.35037539604552437,
+        0.9868800165283412
+      ]
+    },
+    {
+      "source": 6,
+      "target": 1,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 6,
+      "target": 2,
+      "route": [
+        0,
+        2
+      ],
+      "finite": true,
+      "capturedIntermediateAt": 8.310000000000839,
+      "stabilizedAt": 16.03999999999661,
+      "stage": "completed",
+      "impacts": 0,
+      "maxCart": 0.6513235545891896,
+      "finalErrorDeg": [
+        2.0116383911546127,
+        1.3994329827390908,
+        -0.28617961573313816
+      ]
+    },
+    {
+      "source": 6,
+      "target": 3,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 6,
+      "target": 4,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 6,
+      "target": 5,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 7,
+      "target": 0,
+      "route": [
+        0
+      ],
+      "finite": true,
+      "capturedIntermediateAt": 10.519999999999614,
+      "stabilizedAt": 11.40999999999912,
+      "stage": "completed",
+      "impacts": 0,
+      "maxCart": 0.16901501874257252,
+      "finalErrorDeg": [
+        -1.0514481480496183,
+        -0.6278323264907146,
+        0.5785430718987223
+      ]
+    },
+    {
+      "source": 7,
+      "target": 1,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 7,
+      "target": 2,
+      "route": [
+        0,
+        2
+      ],
+      "finite": true,
+      "capturedIntermediateAt": 10.519999999999614,
+      "stabilizedAt": 18.089999999999115,
+      "stage": "completed",
+      "impacts": 0,
+      "maxCart": 0.6600237157276838,
+      "finalErrorDeg": [
+        2.5365612890819196,
+        1.422308286965958,
+        -1.1016479259816971
+      ]
+    },
+    {
+      "source": 7,
+      "target": 3,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 7,
+      "target": 4,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 7,
+      "target": 5,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    },
+    {
+      "source": 7,
+      "target": 6,
+      "route": null,
+      "status": "no reference route tested; online search may still find one"
+    }
+  ]
+}

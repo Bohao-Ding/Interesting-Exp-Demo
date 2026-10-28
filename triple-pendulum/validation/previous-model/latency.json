@@ -1,0 +1,102 @@
+{
+  "description": "DDD to UDU; extra command delay on top of 10 ms sensor delay; one random seed",
+  "leadMs": 10,
+  "cases": [
+    {
+      "extraDelayMs": 0,
+      "waitSeconds": 1,
+      "lostAt": null,
+      "impacts": 0,
+      "maxCart": 0.6608672366740316,
+      "finalErrorDeg": [
+        1.0044899328750114,
+        1.03239734991991,
+        1.1256167010311735
+      ]
+    },
+    {
+      "extraDelayMs": 0,
+      "waitSeconds": 7,
+      "lostAt": null,
+      "impacts": 0,
+      "maxCart": 0.6569999771907352,
+      "finalErrorDeg": [
+        0.8236895993415934,
+        0.67449345102006,
+        0.84368929798783
+      ]
+    },
+    {
+      "extraDelayMs": 5,
+      "waitSeconds": 1,
+      "lostAt": null,
+      "impacts": 0,
+      "maxCart": 0.6615876386702894,
+      "finalErrorDeg": [
+        0.6844493249918688,
+        0.8809988483616398,
+        0.9996821233406702
+      ]
+    },
+    {
+      "extraDelayMs": 5,
+      "waitSeconds": 7,
+      "lostAt": null,
+      "impacts": 0,
+      "maxCart": 0.6781217603387221,
+      "finalErrorDeg": [
+        0.8246795374505143,
+        0.9808155454900401,
+        1.0709248716940636
+      ]
+    },
+    {
+      "extraDelayMs": 10,
+      "waitSeconds": 1,
+      "lostAt": null,
+      "impacts": 0,
+      "maxCart": 0.6614704775637017,
+      "finalErrorDeg": [
+        0.8326367370555231,
+        0.6647918759686188,
+        0.8311869006907304
+      ]
+    },
+    {
+      "extraDelayMs": 10,
+      "waitSeconds": 7,
+      "lostAt": null,
+      "impacts": 0,
+      "maxCart": 0.6586777234092447,
+      "finalErrorDeg": [
+        0.8780050682633502,
+        1.1788085303760185,
+        1.2252875085827213
+      ]
+    },
+    {
+      "extraDelayMs": 15,
+      "waitSeconds": 1,
+      "lostAt": 4.509999999999837,
+      "impacts": 0,
+      "maxCart": 0.6614788804564082,
+      "finalErrorDeg": [
+        -171.445771925839,
+        -22.042095262144567,
+        -134.1024725550291
+      ]
+    },
+    {
+      "extraDelayMs": 15,
+      "waitSeconds": 7,
+      "lostAt": 10.50999999999962,
+      "impacts": 0,
+      "maxCart": 0.6583528921025703,
+      "finalErrorDeg": [
+        169.4814262264115,
+        -31.791194286876628,
+        173.4968496984601
+      ]
+    }
+  ]
+}

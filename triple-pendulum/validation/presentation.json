@@ -1,0 +1,11 @@
+{
+  "description": "synthetic 250 Hz poses with delivery jitter and 240 Hz rendering; not a browser FPS benchmark",
+  "maximumBackstepSeconds": 0,
+  "linearMotionInterpolationError": 1.4210854715202004e-14,
+  "advancingFrames": 1197,
+  "totalFrames": 1197,
+  "counterCheck": {
+    "paintFps": 200,
+    "motionFps": 100
+  }
+}

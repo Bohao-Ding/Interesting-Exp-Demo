@@ -1,0 +1,81 @@
+{
+  "status": "focused switching verified; high-refresh display optimization verified in recorded foreground cases",
+  "physicsStateSize": 9,
+  "motor": {
+    "delay": 0.005,
+    "tau": 0.02
+  },
+  "newAcceptedReference": "0-2 with independent closed-loop validation",
+  "searchDiagnostics": {
+    "2": {
+      "duration": 5.0,
+      "metrics": {
+        "angleMax": 2.819283734945482,
+        "angularSpeedMax": 10.80654467220669,
+        "cartPosition": 1.8056272694808145e-05,
+        "cartSpeed": 6.340490473096596e-06,
+        "railMax": 0.6304941796797192,
+        "speedMax": 2.566059582123077,
+        "omegaMax": 26.323384186196932,
+        "relativeOmegaMax": 45.69418643133491,
+        "motorEnd": 3.993649539568711e-06
+      },
+      "defectMax": 6.615994480707599e-06,
+      "seconds": 60.70825130000594,
+      "openLoopOk": false
+    },
+    "7": {
+      "duration": 5.3,
+      "metrics": {
+        "angleMax": 2.9984190160919866,
+        "angularSpeedMax": 6.898356969046092,
+        "cartPosition": 0.025882866917957267,
+        "cartSpeed": 0.05628374805754163,
+        "railMax": 0.617310499733715,
+        "speedMax": 2.402179987326511,
+        "omegaMax": 37.285089279438196,
+        "relativeOmegaMax": 52.676653694168174,
+        "motorEnd": 4.831709681116236e-06
+      },
+      "defectMax": 0.017799431511996408,
+      "seconds": 90.65339130000211,
+      "openLoopOk": false
+    }
+  },
+  "browser": {
+    "framesPerSecondRange": [
+      245,
+      261
+    ],
+    "physicsStepsPerSecondApprox": 1000,
+    "railImpacts": 0,
+    "performanceRecord": "display-performance.json",
+    "includesSwingUpAndZoomedRelease": true
+  },
+  "validationFiles": [
+    "baseline-audit.json",
+    "physics.json",
+    "closed-loop.json",
+    "transition-0-2.json",
+    "routes.json",
+    "timing.json",
+    "display-performance.json",
+    "display-physics-regression.json",
+    "presentation.json"
+  ],
+  "limitations": [
+    "Other target states remain exploratory and are outside the focused switching scope",
+    "Strong disturbances can still destabilize the controller",
+    "Motor and damping parameters are illustrative, not hardware identified",
+    "Actual refresh scheduling depends on the browser and display"
+  ],
+  "resourcesReleased": true,
+  "previousBrowserReview": {
+    "transition": "DDD to DUD and feedback release back to DDD",
+    "heldSecondsAtLeast": 50,
+    "railImpacts": 0,
+    "physicsStepsPerSecondApprox": 1000,
+    "framesPerSecondApprox": 60
+  },
+  "scope": "Focused bidirectional DDD <-> DUD switching and foreground rendering above 150 FPS where refresh scheduling permits"
+}

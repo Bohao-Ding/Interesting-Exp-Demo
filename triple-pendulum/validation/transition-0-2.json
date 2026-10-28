@@ -1,0 +1,67 @@
+{
+  "target": 2,
+  "duration": 5,
+  "referenceDefectMax": 0.000006617355837956751,
+  "cases": [
+    {
+      "ideal": true,
+      "amplitude": 0,
+      "seed": 7201,
+      "lostAt": null,
+      "firstCaptureAt": 6.000000000000338,
+      "peakOmegaRadS": [
+        8.608810517747516,
+        10.236553685451172,
+        13.113112359323273
+      ],
+      "railMax": 0.650097286092668,
+      "impacts": 0,
+      "trackingErrorDeg": 4.4555060729537495,
+      "finalErrorDeg": [
+        -0.0000013965360120379416,
+        -0.0000013857260476139833,
+        -0.0000014024275960929505
+      ]
+    },
+    {
+      "ideal": false,
+      "amplitude": 0.02,
+      "seed": 7201,
+      "lostAt": null,
+      "firstCaptureAt": 6.000000000000335,
+      "peakOmegaRadS": [
+        8.555040330855048,
+        10.235773097949505,
+        13.21460026597383
+      ],
+      "railMax": 0.6643574865248426,
+      "impacts": 0,
+      "trackingErrorDeg": 3.848709858045035,
+      "finalErrorDeg": [
+        0.15237563410807098,
+        0.11290836673458594,
+        0.38173181785902693
+      ]
+    },
+    {
+      "ideal": false,
+      "amplitude": 0.02,
+      "seed": 7202,
+      "lostAt": null,
+      "firstCaptureAt": 6.000000000000335,
+      "peakOmegaRadS": [
+        8.785354288516567,
+        10.206406212499122,
+        13.034738442420311
+      ],
+      "railMax": 0.6626540819351568,
+      "impacts": 0,
+      "trackingErrorDeg": 7.065485580703647,
+      "finalErrorDeg": [
+        0.05718002321412057,
+        -0.047204918281717016,
+        -0.3428193764427771
+      ]
+    }
+  ]
+}
