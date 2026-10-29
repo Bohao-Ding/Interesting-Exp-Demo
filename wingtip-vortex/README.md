@@ -1,40 +1,52 @@
-# 三维机翼翼尖涡
+# 三维机翼翼尖涡 / 3D Wingtip Vortices
 
-自编 WebGPU CFD 风洞，以 NASA CRM-HL 的 WING01 参考翼面为基础，计算均匀来流经过实体机翼后形成的三维尾迹。独立于仓库其他演示，不调用现成 CFD 引擎。
+自编 WebGPU CFD 风洞，基于 NASA CRM-HL 的 WING01 参考翼面，计算均匀来流经过机翼、翼刀和扰流板形成的三维尾迹。
 
-![优化后的精细网格 CFD 图片预览](assets/performance-preview.png)
+A custom WebGPU CFD wind tunnel based on the NASA CRM-HL WING01 reference wing, simulating the three-dimensional wake of a wing with fences and spoilers.
 
-本机 FP32 成对测量中，标准网格端到端吞吐提高约 9.5%，1,742 万单元网格提高约 12.2%；两档相同 1,024 步后的速度、密度逐点差为 0。测量条件与原始记录见 [VALIDATION.md](VALIDATION.md)。另保留[初版截图](assets/preview.png)，预览均为 PNG 图片。
+![三维机翼与翼尖尾迹 / Wing and tip wake](assets/performance-preview.png)
 
-## 启动与关闭
+## 运行 / Run
 
-需要 Rust 和支持 WebGPU 的浏览器。运行时无第三方 Rust / JavaScript 依赖。
+需要 Rust stable（edition 2021）和支持 WebGPU、开启硬件加速的浏览器。Windows MSVC 环境需要 C++ 构建工具与 Windows SDK。从仓库根目录运行：
+
+Requires Rust stable with edition 2021 support and a WebGPU-capable browser with hardware acceleration. Windows MSVC builds require C++ Build Tools and the Windows SDK. Run from the repository root:
 
 ```powershell
 cargo run --release --manifest-path wingtip-vortex/Cargo.toml
 ```
 
-打开 <http://127.0.0.1:8768/>。关闭浏览器页面释放 GPU 缓冲区；终端 `Ctrl+C` 停止 HTTP 服务。页面中的“暂停”停止推进时间，并只在视角或显示设置改变时重绘，保留显存中的流场以便检查。
+打开 <http://127.0.0.1:8768/>。结束时关闭页面释放 GPU 资源，再在终端按 `Ctrl+C` 停止服务。
 
-左键拖动旋转，右键或 Shift 拖动平移，滚轮缩放。“俯视”和“尾迹视角”提供观察位置；“聚焦翼尖尾迹”只裁切显示区域，计算始终覆盖整个风洞。切换实体构型、网格、迎角或存储格式会从均匀来流重新计算，不插值制造新的涡流。
+Open <http://127.0.0.1:8768/>. To stop, close the page to release GPU resources, then press `Ctrl+C` in the terminal.
 
-## 计算与几何范围
+## 观察 / Controls
 
-- 原始翼面：NASA WING01 STEP 中的六块主翼面及圆滑翼尖。保留后掠、厚度、弯度、扭转和后缘折点；施加文献给出的 5° 上反角。为构成孤立全翼，将翼根边界接至对称面并镜像，未包括机身和发动机。
-- 两片翼刀和四片升起 25° 的平板扰流板为**本项目研究扩展**，不是 NASA 标准构型或某款民航机的完整复刻。显示与 CFD 均由同一几何产生；薄板进入无滑移链路边界计算，不只是渲染模型。
-- 求解：D3Q19 正则化格子玻尔兹曼方法、Smagorinsky 亚网格黏性，`Cs=0.14`，FP32 为默认。初版固定 `Re_MAC=2,000`，自由来流格子速度 `0.07`，`Ma∞≈0.121`。网格为立方均匀网格，三档约 65 万、516 万、1,742 万单元。
-- 初值：全域密度 1、相同的均匀速度。没有旋涡初值、螺旋力、预置涡核或预设粒子轨迹。Q、涡量、压力系数和流线都来自求得的速度 / 密度场。流线是冻结当前速度场的积分，不是空气凝结或真实烟雾。
-- 这是较低雷诺数下的三维流动初版。边界层、薄后缘、涡核和装置周围的小尺度尚未经过网格收敛研究；不能用于实机气动性能、适航或翼尖装置减阻结论。
+- 左键旋转，右键或 Shift 拖拽平移，滚轮缩放。/ Left-drag to rotate, right-drag or Shift-drag to pan, and wheel to zoom.
+- 选择俯视或尾迹视角，切换 Q 或涡量强度，并可叠加表面压力和流线。/ Choose top or wake views, display Q or vorticity magnitude, and optionally overlay surface pressure and streamlines.
+- 切换构型、迎角或网格会从均匀来流重新计算；暂停保留流场。/ Changing configuration, angle of attack, or grid restarts from uniform flow; pausing retains the flow field.
+- 三档网格约为 65 万、516 万和 1,742 万单元；聚焦翼尖尾迹改变显示区域。/ Three grids contain about 0.65, 5.16, and 17.42 million cells; tip-wake focus changes the displayed region.
+- PNG 图片和数值检查结果保存到 `output/`。/ PNG snapshots and numerical-check results are saved to `output/`.
 
-几何、方法、文献取舍与后续精度路线见 [文献与模型讨论](METHODS.md)；本机核对和速度比较见 [结果记录](VALIDATION.md)。
+## 几何与模型 / Geometry and model
 
-## 保存与复现
+主翼保留公开曲面的后掠、厚度、弯度、扭转和圆滑翼尖，施加 5° 上反角，并连接翼根构成孤立全翼。两片翼刀和四片抬起 25° 的扰流板为研究扩展；实体与薄板均参与 CFD 边界计算。
 
-“保存图片”写入 `output/preview.png`，不生成视频。“核对与测速”会暂停推进，记录当前压力 / 环量 / 瞬时气动力，并做必要的实现比较与解析剪切波核对，结果写入 `output/validation.json`。核对会临时占用更多显存。
+The wing retains the source surfaces' sweep, thickness, camber, twist, and rounded tips. It has 5° dihedral and joined roots forming an isolated full wing. Two fences and four spoilers deflected by 25° are research additions; both solid surfaces and thin plates participate in the CFD boundaries.
 
-“FP32 性能比较”在当前网格和构型下记录 GPU 各阶段耗时，比较原串行实现与融合场提取、最多两个批次在途的实现，并核对相同 1,024 步后的速度、密度和气动力。结果保存到 `output/performance.json`。它临时创建两份 FP32 流场；精细网格需要额外数 GB 显存。默认运行每帧只提交一个包含求解和显示的命令缓冲区，不降低网格、精度或显示采样数。
+求解器采用 D3Q19 正则化格子玻尔兹曼方法、Smagorinsky 亚网格黏性（`Cs=0.14`）与 FP32 存储。工况为 `Re_MAC=2000`、格子来流速度 0.07。涡量、Q、压力和流线由求得的速度与密度计算。
 
-渲染三角网格、压缩边界文件及几何元数据位于 `data/`，运行无需安装 CAD 工具。重新从公开 STEP 生成它们时，需要 Python、NumPy 和 SciPy：
+The solver uses a D3Q19 regularized lattice Boltzmann method, Smagorinsky subgrid viscosity (`Cs=0.14`), and FP32 storage. The operating condition is `Re_MAC=2000` with lattice inflow speed 0.07. Vorticity, Q, pressure, and streamlines are derived from the computed velocity and density.
+
+模型用于低雷诺数下的大尺度尾迹观察；局部精度受均匀网格、体素边界和近壁分辨率影响。FP16 存储为实验选项，压力与气动力分析使用默认 FP32。
+
+The model is intended for large-scale wake visualization at low Reynolds number. Local accuracy depends on the uniform grid, voxel boundaries, and near-wall resolution. FP16 storage is experimental; use the default FP32 mode for pressure and force analysis.
+
+## 几何生成与资料 / Geometry generation and details
+
+运行所需网格和边界数据位于 `data/`。从公开 STEP 重新生成时，需要 Python、NumPy 和 SciPy：
+
+Runtime geometry and boundary data are in `data/`. Regenerating them from the public STEP file requires Python, NumPy, and SciPy:
 
 ```powershell
 cd wingtip-vortex
@@ -42,4 +54,4 @@ python tools/fetch_geometry.py
 python tools/prepare_geometry.py
 ```
 
-几何脚本只支持本项目这份 STEP 的非有理张量积 B 样条曲面；它不是通用 STEP 转换器。构建缓存、下载的 CAD / Excel、临时结果均已排除 Git 跟踪。原始 CAD 公开链接和变换记录保存在 `data/geometry.json` 与本文献讨论中。
+[几何与数值方法 / Geometry and numerical methods](METHODS.md) · [结果说明 / Results](VALIDATION.md) · [几何参数 / Geometry metadata](data/geometry.json)

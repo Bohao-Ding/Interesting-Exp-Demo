@@ -1,67 +1,47 @@
-# Kelvin–Helmholtz 剪切不稳定
+# Kelvin–Helmholtz 剪切不稳定 / Shear Instability
 
-自编二维 GPU CFD：中央流层向右，上下流层向左，平滑剪切层在初始微扰作用下卷起为“猫眼涡”。两色示踪物显示卷吸、拉伸和混合；也可切换涡量、流速，叠加速度箭头。没有使用现成 CFD 引擎。
+自编二维 GPU CFD 演示：中央流层向右、上下流层向左，初始扰动使剪切层卷起为猫眼涡。两色示踪物显示卷吸、拉伸与混合。
 
-![双剪切层的猫眼涡与示踪物](assets/preview.png)
+A custom 2D GPU CFD simulation in which a rightward central layer meets leftward outer layers. Initial perturbations roll the shear layers into cat's-eye vortices, while two-color tracers reveal entrainment, stretching, and mixing.
 
-## 启动与停止
+![剪切层与猫眼涡 / Shear layers and cat's-eye vortices](assets/preview.png)
 
-需要 Rust stable（支持 edition 2024）以及支持 WebGPU、开启硬件加速的浏览器。Windows 使用 MSVC 工具链时需要 C++ 构建工具与 Windows SDK。没有第三方 Cargo 或 npm 依赖。
+## 运行 / Run
 
-在仓库根目录运行：
+需要 Rust stable（edition 2024）及支持 WebGPU、开启硬件加速的浏览器。Windows MSVC 环境需要 C++ 构建工具与 Windows SDK。从仓库根目录运行：
+
+Requires Rust stable with edition 2024 support and a WebGPU-capable browser with hardware acceleration. Windows MSVC builds require C++ Build Tools and the Windows SDK. Run from the repository root:
 
 ```powershell
 cargo run --release --manifest-path kelvin-helmholtz/Cargo.toml
 ```
 
-然后打开 [http://127.0.0.1:8767](http://127.0.0.1:8767)。也可进入此目录直接运行 `cargo run --release`。Rust 负责本机文件服务及保存图片，流体与示踪物计算、显示均在浏览器 GPU 中进行。
+打开 <http://127.0.0.1:8767/>。Rust 提供本地服务，求解和显示在浏览器 GPU 上执行。结束时关闭页面，再在终端按 `Ctrl+C`。
 
-初次打开会真实预演化到 tU/H≈1，等待时间取决于设备。点击「重新开始」可从平直剪切层开始观看；开启「循环」时，tU/H=6 后重新初始化并短暂预演化至约 0.4。循环会重置物理时间，没有持续驱动或指定涡旋轨迹。
+Open <http://127.0.0.1:8767/>. Rust serves local files; computation and rendering run on the browser GPU. To stop, close the page and press `Ctrl+C` in the terminal.
 
-**完全停止：关闭动画页面，再在 Cargo 终端按 Ctrl+C。** 只关闭本机服务不会停止已加载的 GPU 计算。暂停冻结物理时间，仍会绘制并允许缩放与平移。
+## 交互 / Controls
 
-若提示没有可用 WebGPU，请使用支持 WebGPU 的浏览器并开启硬件加速；通过 HTTP 地址打开，不要双击 `index.html`。若端口 8767 被占用，请先停止此前的本实验实例。
+- 滚轮缩放、拖拽或方向键平移，双击或 Home 恢复全域；空格暂停，F 全屏。/ Wheel to zoom, drag or use arrow keys to pan, double-click or press Home to fit the domain; Space pauses and F toggles fullscreen.
+- 自动网格在 1536×768、2048×1024、2560×1280 间切换，手动模式还提供 1024×512。/ Automatic grids range from 1536×768 through 2048×1024 to 2560×1280; manual mode also offers 1024×512.
+- 切换示踪物、涡量或流速，并可显示速度箭头。/ View tracer concentration, vorticity, or speed, with optional velocity arrows.
+- 修改 Re 后点击“重新开始”；循环模式在 `tU/H=6` 后重置并预演化。/ After changing Re, click “重新开始” (Restart); loop mode resets after `tU/H=6` and advances the initial flow.
+- PNG 截图保存到 `output/preview.png`。/ PNG snapshots are saved to `output/preview.png`.
 
-## 观察操作
+## 模型 / Model
 
-- 滚轮以鼠标位置为中心缩放，最大 20×；拖拽平移。
-- 点击画布后可用方向键平移，Home 恢复全域；双击或「全域」也可恢复总览。
-- 空格暂停/继续，F 全屏。
-- 自动网格默认 1536×768（1,179,648 单元）；超过 1.6× 时加密到 2048×1024，超过 3.2× 时加密到 2560×1280（3,276,800 单元）。停止缩放约 0.35 秒后重映射，缩小时回落。
-- 手动网格可选择 1024×512、1536×768、2048×1024 或 2560×1280。全域始终为 2H×H；网格变化保留 Re 和当前无量纲时间，并插值当前分布函数和示踪物。它是全域均匀加密，有重映射离散误差。
-- 更改 Re 后点击「重新开始」。演化速度控制目标物理时间推进率；设备负载较高时会降低实际推进速度。
-- 截图保存至本实验的 `output/preview.png`，再次保存会覆盖；固定展示图片位于 `assets/`，没有视频文件。
+流体使用 D2Q9 TRT 格子玻尔兹曼方法，计算域为 `2H×H`，四边周期。默认 `Re=UH/ν=5000`、格子速度 `U=0.05`。平滑双剪切层叠加多波长横向扰动；示踪物满足对流扩散方程，`κ=ν`。
 
-## 方程与离散
+The fluid uses a D2Q9 TRT lattice Boltzmann method on a `2H×H` doubly periodic domain. Defaults are `Re=UH/ν=5000` and lattice speed `U=0.05`. Smooth double shear layers carry multi-wavelength transverse perturbations. The tracer follows an advection–diffusion equation with `κ=ν`.
 
-等初始密度、低 Mach 数、二维周期域的 D2Q9 格子玻尔兹曼流体求解，使用 TRT 碰撞与 pull streaming。上下、左右均周期，无圆柱、入口、出口或海绵层。格子速度 U=0.05，Re=UH/ν，默认 Re=5000；ν=U·Ny/Re，τ⁺=1/2+3ν，(τ⁺−1/2)(τ⁻−1/2)=3/16。
+示踪物采用 MC 限幅 MUSCL 重构与 SSP-RK2。缩放触发全域均匀网格重映射，保持物理区域、Re 和演化时间。模型为弱可压缩二维流动；网格插值误差和长时间 FP32 密度漂移见结果说明。
 
-以 X=x/(2H)、Y=y/H 表示初始场，令 a=0.025：
+Tracer transport uses MC-limited MUSCL reconstruction and SSP-RK2. Zoom-triggered global remapping preserves the physical domain, Re, and simulation time. The model is weakly compressible and two-dimensional; remapping error and long-run FP32 density drift are documented in the results.
 
-```text
-b(Y) = 0.5 [tanh((Y−0.25)/a) − tanh((Y−0.75)/a)]
-u_x  = U [2b(Y)−1]
-u_y  = 0.02 U [sin(8πX) + 0.35 sin(4πX+0.3) + 0.1 sin(2πX+0.7)]
-ρ    = 1
-c    = b(Y)
-```
+## 数值检查与资料 / Verification and details
 
-主扰动有四个周期，较长波扰动用于打破完全对称的涡列。此处 Re 使用域高 H 和单侧速度 U 定义，速度跳变为 2U。初始速度散度为零，但 LBM 后续求解是弱可压缩的。
+访问 <http://127.0.0.1:8767/?verify=1> 可运行剪切波衰减、示踪物对流扩散解析对照及全域场扫描，结果保存到 `output/validation.json`。
 
-示踪物满足 `∂t c + u·∇c = κ∇²c`，κ=ν（Schmidt 数为 1）。使用 MC 限幅 MUSCL 面重构、迎风通量、中心扩散和 SSP-RK2；每 4 个流体格子时间步更新一次示踪物，以该时刻速度冻结推进。对流采用浓度形式的散度修正。色图中的细线由浓度等值线式着色产生，不是额外的小涡或附加计算网格。
+Open <http://127.0.0.1:8767/?verify=1> to run analytical shear-wave and tracer-transport checks plus field scans. Results are saved to `output/validation.json`.
 
-网格重映射采用单元中心的周期双线性插值，并按声学缩放重标度碰撞后的 TRT 非平衡模态；示踪物也插值到新网格。没有严格守恒重映射或局部 AMR。
-
-这是可交互的二维演示。可见细丝和高网格密度不构成网格收敛或三维湍流证据；未复现文献参考解，也未作系统 Re、网格和域尺寸收敛研究。
-
-## 必要核对与文件
-
-开发地址 [/?verify=1](http://127.0.0.1:8767/?verify=1) 在启动时运行两个 128×64、1000 步的小网格解析对照：黏性剪切波衰减、均匀流中的正弦示踪物对流扩散。随后回读当前 KH 全场的密度、浓度、横向速度和 Courant 数；重映射后再回读一次。结果位于页面「操作与计算说明」内，并写至 `output/validation.json`。普通观看地址不运行这些核对。
-
-本次已保存的核对见 [VALIDATION.md](VALIDATION.md)，原始 JSON 摘要保存在 `validation/`。长时间单精度续算中观察到域平均密度有少量漂移，因此这些结果不构成质量守恒或网格收敛验证。
-
-`flow.js`：GPU 调度与重映射；`simulation.wgsl`：流体与示踪物；`remesh.wgsl`：全域网格转移；`render.wgsl`：场显示；`app.js`：交互与绘制；`verification.js`：可选解析对照及场扫描；`src/main.rs`：本机文件服务。
-
-`target/` 和 `output/` 是本地生成目录，不加入版本控制。
-
-方法边界参考：[Lecoanet et al.，平滑初值与显式扩散的 KH 核对问题](https://arxiv.org/abs/1509.03630)；[WebGPU 设备要求](https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapter/requestDevice)。本实验自行实现求解，不调用文献使用的 CFD 引擎。
+[结果说明 / Results](VALIDATION.md) · [Lecoanet et al.：KH 数值问题 / KH test problem](https://arxiv.org/abs/1509.03630)

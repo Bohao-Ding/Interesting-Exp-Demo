@@ -1,32 +1,42 @@
-# 磁重联 · 日冕实验
+# 磁重联与电流片 / Magnetic Reconnection and Current Sheets
 
-自编二维不可压缩电阻磁流体演示，研究两个电流片在多尺度、不规则初始扰动下的演化。磁通、电流和流体涡量由方程逐步计算；细线是当前磁通的等值线，即平面内磁力线。Rust 仅提供本地 HTTP 服务，数值求解和显示使用自编 WebGPU / WGSL，不调用现成仿真引擎。
+自编二维不可压缩电阻磁流体演示，观察双电流片在多尺度不规则初始扰动下的演化、磁岛结构与流体运动，呈现太阳耀斑相关的局部磁重联机制。
 
-![不规则电流片与磁力线](assets/preview.png)
+A custom 2D incompressible resistive MHD simulation of two current sheets with irregular, multi-scale initial perturbations. It visualizes magnetic islands, fluid motion, and a local reconnection mechanism relevant to solar flares.
 
-预览图截取自实际计算画面：512² 网格、初始扰动 0.30、`η=0.003`、`t≈6.6`。背景蓝色 / 橙色分别表示负 / 正电流密度，细线为磁通等值线；图片仅裁去了画布外围空白。
+![电流片与磁力线 / Current sheets and magnetic field lines](assets/preview.png)
 
-**这是太阳耀斑相关磁重联的理想化局部模型，不是太阳耀斑的定量模拟或太阳观测图。** 周期域没有太阳表面和三维日冕结构，也没有温度方程、辐射、重力、可压缩性、粒子加速或观测器响应。`ηj²` 是局部欧姆耗散代理量；画面亮度不是实际温度或耀斑辐射。
+蓝 / 橙表示负 / 正电流密度，细线为平面内磁力线。预览工况：512² 网格、扰动 0.30、`η=0.003`、`t≈6.6`。
 
-## 运行与交互
+Blue/orange indicates negative/positive current density; thin lines trace the in-plane magnetic field. Preview conditions: 512² grid, perturbation 0.30, `η=0.003`, and `t≈6.6`.
 
-需要 Rust 和支持 WebGPU 硬件加速的浏览器。在仓库根目录运行：
+## 运行 / Run
+
+需要 Rust stable（edition 2021）和支持 WebGPU、开启硬件加速的浏览器。Windows MSVC 环境需要 C++ 构建工具与 Windows SDK。从仓库根目录运行：
+
+Requires Rust stable with edition 2021 support and a WebGPU-capable browser with hardware acceleration. Windows MSVC builds require C++ Build Tools and the Windows SDK. Run from the repository root:
 
 ```powershell
 cargo run --release --manifest-path solar-reconnection/Cargo.toml
 ```
 
-打开 <http://127.0.0.1:8770/>。拖拽平移、滚轮以指针为中心缩放、双击或点击“全域”复位。网格可选 256²、512²（默认）、1024²；改变网格会重置计算。缩放只改变视角，不自动加密网格。
+打开 <http://127.0.0.1:8770/>。Rust 提供本地服务，求解与显示在浏览器 GPU 上执行。结束时关闭页面，再在终端按 `Ctrl+C`。
 
-磁扩散率 `η` 可在 0.001–0.008 内调整，修改时保留当前场并重新启动多步时间积分。初始扰动强度可设为 0.06–0.30（默认 0.20），修改会从新初值开始。两片电流片采用不同相位和波数的确定性叠加，因此形态不规则、但每次重置可复现；这不是持续注入随机噪声。较强初始扰动本身已产生部分闭合等值线，不能把所有磁岛解释成从零扰动自发产生。
+Open <http://127.0.0.1:8770/>. Rust serves local files; computation and rendering run on the browser GPU. To stop, close the page and press `Ctrl+C` in the terminal.
 
-显示可切换 `ηj²`、有符号电流、涡量和磁场强度，颜色增益仅影响显示。每帧步数调节演化速度和计算负载，不改变单步大小。界面帧率统计完成的绘制提交，实际显示还受浏览器和显示器限制。数值核对与性能测量在独立临时网格上执行，期间暂停当前计算。
+## 交互 / Controls
 
-**结束后先关闭浏览器页面，再在运行 Cargo 的终端按 Ctrl+C。** 只关闭服务器不会停止已经载入浏览器的 WebGPU 计算；暂停则保留 GPU 缓冲区。
+- 拖拽平移，滚轮缩放，双击或“全域”复位。/ Drag to pan, wheel to zoom, and double-click or choose “全域” (Fit) to reset.
+- 网格可选 256²、512² 或 1024²；改变网格会重置计算。/ Choose a 256², 512², or 1024² grid; changing the grid resets the simulation.
+- 磁扩散率范围 0.001–0.008，调节时保留当前场。/ Adjust magnetic diffusivity over 0.001–0.008 while retaining the field.
+- 初始扰动范围 0.06–0.30，默认 0.20；修改扰动重新生成初始场。/ Initial perturbation ranges from 0.06 to 0.30, with default 0.20; changing it regenerates the initial field.
+- 显示可切换欧姆耗散代理量 `ηj²`、电流、涡量或磁场强度；每帧步数控制演化速度。/ Display the Ohmic dissipation proxy `ηj²`, current, vorticity, or field strength; steps per frame control the evolution rate.
 
-## 计算模型
+## 模型 / Model
 
-归一化长度、磁场和密度选择使参考 Alfvén 速度为 1；计算域是周期正方形 `[0, 2π)²`。令磁通为 `A`，流函数为 `φ`：
+计算域为周期正方形 `[0,2π)²`，参考 Alfvén 速度归一化为 1。磁通 A 和流函数 φ 满足：
+
+The domain is the periodic square `[0,2π)²`, with reference Alfvén speed normalized to 1. Magnetic flux A and streamfunction φ satisfy:
 
 ```text
 B = (∂y A, -∂x A),     u = (∂y φ, -∂x φ)
@@ -36,44 +46,18 @@ j = -∇²A,              ω = -∇²φ
 ∂t ω = [φ,ω] + [j,A] + ν∇²ω
 ```
 
-`ν=0.003`。初始磁场为位于 `x=π/2` 和 `x=3π/2` 的双电流片，特征宽度 0.18；两片上分别叠加不同相位和权重的低阶傅里叶扰动。初始流体速度为零。方程、磁扩散率和边界都使用无量纲值，未映射到具体太阳活动区。
+黏性系数 `ν=0.003`。双电流片叠加不同相位和权重的傅里叶扰动，初始流速为零。空间离散采用有限差分与 Arakawa 括号，泊松方程由自编 FFT 求解，时间推进采用二阶 Adams–Bashforth，计算精度为 FP32。
 
-空间导数使用周期有限差分，非线性括号使用 Arakawa 三模板形式；这是改善离散非线性项的守恒性质，并不表示完整的时间推进或有限精度计算严格守恒。泊松方程使用自编二维 FFT 求解离散五点拉普拉斯算子，零波数取零；每个时间步只解一次。时间推进为二阶 Adams–Bashforth，第一步和改变 `η` 后的第一步用欧拉法启动。时间步按 `min(0.12 Δx, 0.11 Δx²/max(η,ν))` 选取，以兼顾平流和该时间方法的扩散稳定范围；这不是任意流速、任意长时间的稳定性证明。计算为 FP32。
+Viscosity is `ν=0.003`. The two current sheets carry Fourier perturbations with different phases and weights, and the initial fluid velocity is zero. Spatial discretization uses finite differences and Arakawa brackets, a custom FFT solves the Poisson equation, and second-order Adams–Bashforth advances FP32 fields.
 
-## 数值核对
+这是无量纲的局部磁重联模型；显示的磁岛同时受初始扰动和后续演化影响。`ηj²` 表示局部耗散，温度与辐射需要另行建模。
 
-2026-10-28，本机 NVIDIA GeForce RTX 5070 Ti；记录见 [numerical.json](validation/numerical.json)，可用界面中的“数值核对”重跑。
+This is a dimensionless local reconnection model. Magnetic islands reflect both the initial perturbations and subsequent evolution. The quantity `ηj²` represents local dissipation; temperature and radiation require additional models.
 
-- 128² 周期正弦泊松问题，相对 L2 误差 `7.91×10⁻⁷`；单模磁扩散在 `t≈1.51` 的相对 L2 误差 `3.73×10⁻⁷`。前者对照离散算子的解析特征值，后者对照该离散特征值的指数衰减。
-- 默认扰动、`η=ν=0.003`、256² 推进到 `t≈18`，磁能和动能之和由 0.44813 降到 0.36407；对离散欧姆与黏性耗散做时间梯形积分得 0.08419，两者差约 `−1.23×10⁻⁴`。积分采样间隔约 1.18，残差包含时间积分、诊断采样与 FP32 误差。最大扰动 0.30 同工况推进到 `t≈18` 的网格场均有限。
-- 在 `t≈6.03`、默认扰动、`η=ν=0.003` 下，将细网格 2×2 平均到粗网格后比较：
+## 数据与参考 / Data and references
 
-| 网格比较 | 磁通相对 L2 差 | 涡量相对 L2 差 |
-|---|---:|---:|
-| 128² / 256² | 0.211% | 11.19% |
-| 256² / 512² | 0.0527% | 2.805% |
-| 512² / 1024² | 0.0137% | 0.713% |
+数值检查覆盖泊松方程、磁扩散、能量收支和指定时刻的网格及时间步对照，可在界面运行。
 
-同一 128² 网格、同一时刻比较默认步长与半步长，磁通 / 涡量相对 L2 差分别约 `3.46×10⁻⁶` / `3.72×10⁻⁴`。磁通误差包含占主导的背景场，不能单独代表磁岛或电流层的局部误差。这些是特定时刻与参数下的对照，不是全部时刻和参数已收敛的证明。
+Numerical checks cover the Poisson equation, magnetic diffusion, energy balance, and grid/time-step comparisons at specified times. They can be run from the interface.
 
-- 在 1024²、扰动 0.30、最高 `η=0.008` 下，步长约 `0.000518`，推进 4,000 步至 `t≈2.07` 后场均有限。它只覆盖这一段演化，并不证明长时间稳定性。
-
-## 计算效率
-
-初版采用双阶段中点法，每步两次泊松求解；现版采用二阶 Adams–Bashforth，每步一次泊松求解，并将非线性项换为 Arakawa 离散。因两版的离散与初始扰动不同，下表是**不同实现的工作量对照**，不是相同算法的逐位加速比较。两版均在同一 GPU、无渲染下预热一次后记录三轮 128 步的提交至完成墙钟时间，记录见 [performance.json](validation/performance.json)。
-
-| 网格 | 初版中位数 | 当前版中位数 |
-|---|---:|---:|
-| 256² | 9.0 ms | 6.1 ms |
-| 512² | 20.4 ms | 11.3 ms |
-| 1024² | 65.7 ms | 39.8 ms |
-
-1024² 的该轮每步耗时约降低 39%；两轮并非交错计时，GPU 负载与时钟会波动。当前步长也略小，步数吞吐提升不能直接等同于相同物理时间的加速比。尝试把 FFT 三角函数系数预计算后，这台机器上的计时反而变慢，故未保留该改法。
-
-## 文件与依据
-
-- `mhd.wgsl`：初始化、FFT、泊松方程、电流与时间推进。
-- `solver.js`：GPU 缓冲区和计算调度；`render.wgsl` / `view.js`：场和磁力线显示及视角；`app.js`：界面；`verify.js` / `performance.js`：上述核对。
-- [University of Texas：Reduced-MHD Equations](https://farside.ph.utexas.edu/teaching/plasma/lectures1/node124.html)：二维不可压缩磁通—流函数表示及降阶 MHD 方程。这里采用不同的电流、涡量符号，并且没有维持背景电流的外加电场。
-- [Arakawa, Journal of Computational Physics, 1966](https://doi.org/10.1016/0021-9991(66)90015-5)：二维流体非线性项的离散守恒方法。
-- [NASA：Solar Storms and Flares](https://science.nasa.gov/sun/solar-storms-and-flares/)：太阳活动中磁场重联与耀斑的背景；该来源不验证本演示的具体结果。
+[数值结果 / Numerical results](validation/numerical.json) · [Reduced-MHD 方程 / Equations](https://farside.ph.utexas.edu/teaching/plasma/lectures1/node124.html) · [Arakawa 离散 / Discretization](https://doi.org/10.1016/0021-9991(66)90015-5) · [NASA 太阳耀斑 / Solar flares](https://science.nasa.gov/sun/solar-storms-and-flares/)

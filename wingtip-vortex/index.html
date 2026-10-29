@@ -9,7 +9,7 @@
 <div class="help">左键旋转 · 右键 / Shift 拖动平移 · 滚轮缩放 · 双击复位<br>金色：研究型扰流板　青色：研究型翼刀</div>
 <aside class="panel"><div id="status">载入几何与 GPU 求解器…</div>
 <div class="row"><label>实体构型</label><select id="configuration"><option value="devices">参考机翼 + 翼刀 / 扰流板</option><option value="clean">参考机翼（干净构型）</option></select></div>
-<div class="row"><label>网格密度</label><select id="resolution"><option value="20">初版预览 · 120 × 112 × 48</option><option value="40" selected>标准 · 240 × 224 × 96</option><option value="60">精细 · 360 × 336 × 144</option></select></div>
+<div class="row"><label>网格密度</label><select id="resolution"><option value="20">概览 · 120 × 112 × 48</option><option value="40" selected>标准 · 240 × 224 × 96</option><option value="60">精细 · 360 × 336 × 144</option></select></div>
 <div class="row"><label>分布函数存储</label><select id="precision"><option value="fp32">FP32（默认，保留精度）</option><option value="fp16">FP16 实验（存在明显精度损失）</option></select></div>
 <div class="row"><label>迎角 <span id="alphaValue">8°</span></label><input id="alpha" type="range" min="0" max="14" value="8" step="2"></div>
 <div class="row"><label>涡结构显示</label><select id="mode"><option value="0">Q &gt; 0 · 旋转主导区域</option><option value="1">涡量强度 · 剪切层与尾迹</option></select></div>
