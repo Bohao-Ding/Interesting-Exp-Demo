@@ -1,32 +1,32 @@
 # Interesting Exp Demo
 
-基于自编数值方法的交互式科学计算动画，涵盖流体力学、电磁波传播、磁流体与摆系统控制。每个实验使用独立子目录，并在自己的 README 中说明依赖、启动、关闭和计算范围。
+交互式科学计算动画，使用自编数值方法探索流体、电磁场、磁流体与机械控制。各实验位于独立目录，运行和模型说明见对应文档。
 
-## 实验目录
+## 实验
 
-| 目录 | 实验 | 启动说明 |
-|---|---|---|
-| `navier-stokes` | Navier–Stokes 爆破解演示动画：局部自相似涡核、旋转层与上下排出通道 | [README](navier-stokes/README.md) |
-| `karman-vortex` | 自编 GPU CFD 卡门涡街：圆柱绕流、流速/涡量/流向、缩放与自动网格加密 | [README](karman-vortex/README.md) |
-| `kelvin-helmholtz` | 自编 GPU CFD 剪切不稳定：双剪切层、示踪物卷吸、高密度网格与缩放平移 | [README](kelvin-helmholtz/README.md) |
-| `wingtip-vortex` | 自编三维 GPU CFD：NASA CRM-HL 参考翼面、研究型翼刀 / 扰流板与自然尾迹 | [README](wingtip-vortex/README.md) |
-| `photonic-crystal` | 自编 Maxwell FDTD：光子晶体、缺陷导光、微腔与可调频率 | [README](photonic-crystal/README.md) |
-| `solar-reconnection` | 自编二维电阻磁流体：不规则扰动、电流片与磁岛演化 | [README](solar-reconnection/README.md) |
-| `triple-pendulum` | 三摆滑轨控制：独立双精度动力学、受限传感与分阶段姿态切换 | [README](triple-pendulum/README.md) |
+| 项目 | 演示内容 |
+|---|---|
+| [Navier–Stokes](navier-stokes/README.md) | 有限阶局部自相似涡核与旋转流场 |
+| [卡门涡街](karman-vortex/README.md) | GPU CFD 圆柱绕流与交替脱涡 |
+| [Kelvin–Helmholtz 不稳定性](kelvin-helmholtz/README.md) | GPU CFD 剪切层卷吸与涡旋演化 |
+| [三维机翼翼尖涡](wingtip-vortex/README.md) | NASA CRM-HL 参考翼面与 CFD 尾迹 |
+| [光子晶体](photonic-crystal/README.md) | Maxwell FDTD 电磁波传播与缺陷导光 |
+| [磁流体与太阳耀斑](solar-reconnection/README.md) | 二维磁流体电流片与磁重联 |
+| [三摆滑轨控制](triple-pendulum/README.md) | 受限传感下的摆系统平衡与姿态切换 |
 
-新增实验时在仓库根目录建立独立子目录，并更新此索引。
+## 画面预览
 
-三维机翼翼尖涡的实际 CFD 画面，采用公开参考翼面与研究型翼刀 / 扰流板。运行方式见 [实验说明](wingtip-vortex/README.md)，FP32 性能优化实测见 [结果记录](wingtip-vortex/VALIDATION.md)。
+三维机翼翼尖涡：
 
-![三维机翼翼尖涡 CFD 图片预览](wingtip-vortex/assets/performance-preview.png)
+![三维机翼翼尖涡](wingtip-vortex/assets/performance-preview.png)
 
-光子晶体中的电磁波传播，由自编 Maxwell FDTD 求解缺陷导光、弯道和微腔响应；支持调频、单柱编辑、高密度网格与缩放平移。模型、性能对照及 CUDA / DLSS 取舍见 [实验说明](photonic-crystal/README.md)。
+光子晶体中的电磁波：
 
-![光子晶体电磁波传播图片预览](photonic-crystal/assets/optimized.png)
+![光子晶体电磁波传播](photonic-crystal/assets/optimized.png)
 
-磁流体与太阳耀斑相关的重联机制演示：电流片在不规则扰动下演化，颜色表示电流密度，细线表示平面内磁力线。模型近似、数值核对和性能对照见 [实验说明](solar-reconnection/README.md)。
+磁流体中的电流片与磁力线：
 
-![二维磁流体电流片与磁力线图片预览](solar-reconnection/assets/preview.png)
+![二维磁流体电流片与磁力线](solar-reconnection/assets/preview.png)
 
 ## 获取与运行
 
@@ -36,4 +36,4 @@ cd Interesting-Exp-Demo
 cargo run --release --manifest-path karman-vortex/Cargo.toml
 ```
 
-以上命令启动卡门涡街实验，随后打开 `http://127.0.0.1:8766`。安装依赖、操作和关闭方式见各实验 README；克隆仓库本身不会启动计算。
+以上命令启动卡门涡街实验，打开 <http://127.0.0.1:8766/> 即可观看。其他实验的依赖、运行和关闭方法见各自的说明。
